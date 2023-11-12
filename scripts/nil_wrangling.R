@@ -78,8 +78,8 @@ colnames(all_data) <- c("Name", "High School", "Position", "Rating",
 
 for(i in 1 : length(urls)) {
   good_to_wrangle <- robotstxt::paths_allowed(urls[i]) # checks if allowed to scrape
-
-
+  
+  
   if(good_to_wrangle) {
     html <- urls[i] |> # reads the html from the URL
       read_html()

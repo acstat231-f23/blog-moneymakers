@@ -1,3 +1,4 @@
+# Author: Tucker Barach
 # Date: October 19, 2023
 # Course: STAT 231
 
@@ -22,65 +23,155 @@ library(stringr)
 library(dplyr)
 library(rvest)
 library(tidyr)
-library(httr)
-
-url <- "https://athlonsports.com/college-football/college-football-players-in-transfer-portal-tracker-2022-23"
-file_path <- "website_text.txt"
-good_to_wrangle <- robotstxt::paths_allowed(url) # checks if allowed to scrape
 
 
+##############################################
+# Function to Convert Shortened String's     #
+# Representing Numbers to Elongated Integers # 
+##############################################
 
-
-
-if(good_to_wrangle) {
+convert_string_to_int <- function(s) {
+  
+  multiplier <- 1
+  
+  s <- stringr::str_replace(s, "\\$", "") # removes dollar sign
   
   
-  text <- read.table(file_path, header = FALSE, sep = "\n", quote = "", comment.char = "") %>%
-    rename("info" = V1) %>%
-    filter(str_detect(info, ",")) %>%
-    filter(!str_detect(info, "\\?"))
-  
-  text <- head(text, -5)
-  text <- tail(text, -5)
-  rownames(text) <- NULL
-  
-  text$info <- gsub(",", "", text$info)
-  #text$info <- gsub(" to", "", text$info)
-
-  text <- text %>%
-    separate(info, into = c("position", "first", "last", "school1", "school2",
-                            "school3", "school4", "school5", "school6", "school7"), sep = " ")
-  
-  text$name <- paste(text$first, text$last, sep = " ")
-  
-  text[is.na(text)] <- ""
-  
-  text2 <- text %>%
-    select(school1, school2, school3, school4, school5, school6, school7)
-  
-  schools <- data.frame()
-  names(schools) <- c("school_from", "school_to")
-  
-  schools$school_from <- ""
-  schools$school_to <- ""
-  
-  # Loop through each row
-  for (i in 1:nrow(text2)) {
-    # Find the index of the column that contains 'to' for the current row
-    to_index <- which(text2[i, ] == "to")
-    
-    # Make sure 'to' was found
-    if (length(to_index) > 0) {
-      # Combine columns before 'to'
-      combined_before_to <- paste(text2[i, 1:(to_index-1)], collapse = " ")
-      schools$schools_from[i] <- combined_before_to
-      
-      # Combine columns after 'to', also removing any NA values
-      combined_after_to <- paste(na.omit(text2[i, (to_index+1):ncol(text2)]), collapse = " ")
-      schools$schools_to[i] <- combined_after_to
-    }
+  if (grepl("M", s)) {
+    multiplier <- 1e6                     # million multiplier power
+    s <- gsub("M", "", s)                 # removes the M for million
+  } 
+  else if (grepl("K", s)) {
+    multiplier <- 1e3                     # thousand multiplier power
+    s <- gsub("K", "", s)                 # removes the K for thousand
   }
   
-  
-  
+  numeric_value <- as.numeric(s)
+  return(numeric_value * multiplier)
 }
+
+
+# All the websites we will scrape data from:
+urls = c("https://www.on3.com/transfer-portal/top/football/2023/?position=qb&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=rb&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=wr&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=te&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=ot&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=iol&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=edge&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=dl&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=lb&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=cb&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=s&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=ath&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=k&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=p&orderby=nilvalue",
+         "https://www.on3.com/transfer-portal/top/football/2023/?position=ls&orderby=nilvalue"
+         )
+
+
+# Creating an empty data set with 7 columns and labeling them:
+all_data <- data.frame(matrix(ncol = 4, nrow = 0))
+colnames(all_data) <- c("Name", "NIL Valuation", "Last Team", "New Team")
+
+
+
+#############################################
+# Loops Through Every URL and Combines the  #
+# Data into One Grand Dataframe             #
+#############################################
+
+for(i in 1 : length(urls)) {
+  good_to_wrangle <- robotstxt::paths_allowed(urls[i]) # checks if allowed to scrape
+  
+  
+  if(good_to_wrangle) {
+    html <- urls[i] |> # reads the html from the URL
+      read_html()
+    
+    name_class_name <- ".MuiTypography-root.MuiLink-root.MuiLink-underlineNone.MuiTypography-h5.MuiTypography-colorPrimary"
+    name_text <- html |>
+      html_elements(name_class_name) |>
+      html_text()
+    
+    # Coverts the nested list of NIL Data into a dataframe:
+    name_val_data <- as.data.frame(do.call(cbind, list(name_text)))
+    
+    
+    # Retrieves all NIL Valuation data:
+    nil_class_name <- ".MuiTypography-root.TransferPortalItem_nilValuation__nWAKv.MuiTypography-body1.MuiTypography-colorTextPrimary"
+    nil_text <- html |>
+      html_elements(nil_class_name) |>
+      html_text()
+
+    # Coverts the nested list of NIL Data into a dataframe:
+    nil_val_data <- as.data.frame(do.call(cbind, list(nil_text)))
+    
+    
+    last_class <- ".MuiTypography-root.MuiLink-root.MuiLink-underlineNone.TransferPortalItem_lastTeam__1zqJn.MuiTypography-colorPrimary"
+    last_text <- html |>
+      html_elements(last_class) |>
+      html_attr("href") |>
+      str_remove("/college/") |>
+      str_remove("/football/2023/industry-comparison-commits/") |>
+      str_replace_all("-", " ")
+    
+    # Converts the nested list of School Data into a dataframe:
+    last_school_data <- as.data.frame(do.call(cbind, list(last_text)))
+    
+    new_class <- ""
+    multi_options <- ".MuiTypography-root.MuiLink-root.MuiLink-underlineNone.TransferPortalItem_predictionsContainer__2jMBE.MuiTypography-colorPrimary"
+    if(length(html_elements(html, multi_options)) > 0) {
+      new_class = ".TransferPortalItem_teamLogo__1WJ8K.Icon_iconMainIcon__0zor0,
+    .MuiTypography-root.MuiLink-root.MuiLink-underlineNone.TransferPortalItem_predictionsContainer__2jMBE.MuiTypography-colorPrimary,
+    .MuiTypography-root.MuiLink-root.MuiLink-underlineNone.TransferPortalItem_committedLogoContainer__ftdQr.MuiTypography-colorPrimary"
+    } else {
+      new_class <- ".TransferPortalItem_teamLogo__1WJ8K.Icon_iconMainIcon__0zor0,
+    .TransferPortalItem_prediction__lWVho,
+    .MuiTypography-root.MuiLink-root.MuiLink-underlineNone.TransferPortalItem_committedLogoContainer__ftdQr.MuiTypography-colorPrimary"
+    }
+    
+    new_text <- html |>
+      html_elements(new_class) |>
+      html_attr("href")
+    
+    new_text <- ifelse(str_detect(new_text, "recruiting"), "unknown", new_text)
+    
+    new_text <- new_text |>
+      str_remove("/college/") |>
+      str_remove("/football/2023/industry-comparison-commits/") |>
+      str_replace_all("-", " ")
+    
+    new_text <- ifelse(is.na(new_text), "unknown", new_text)
+    
+    # Converts the nested list of School Data into a dataframe:
+    new_school_data <- as.data.frame(do.call(cbind, list(new_text)))
+
+    position_data <- cbind(name_val_data) |>
+      cbind(nil_val_data) |>
+      cbind(last_school_data) |>
+      cbind(new_school_data)
+    
+    all_data <- rbind(position_data, all_data)
+    
+  
+  }
+}
+
+  names(all_data) <- c("Name", "NIL Valuation", "Last Team", "New Team")
+  all_data <- all_data |>
+    mutate("NIL Valuation" = map_dbl(`NIL Valuation`, convert_string_to_int))
+  
+  all_data$`NIL Valuation`[is.na(all_data$`NIL Valuation`)] <- 0
+  arrange(all_data, `NIL Valuation`)
+  
+  summarized_transfer_data <- all_data |>
+    group_by(`New Team`) |>
+    summarize(
+      total_nil_valuation = sum(`NIL Valuation`),
+      avg_valuation       = round(mean(`NIL Valuation`), 2),
+      number_athletes     = n()
+    ) |>
+    arrange(desc(total_nil_valuation))
+  
+
