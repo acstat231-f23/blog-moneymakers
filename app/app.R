@@ -16,11 +16,13 @@ library(kableExtra)
 library(shinythemes)
 library(DT)
 library(ggrepel)
+library(leaflet)
 
 
 # Read all data:
 athlete_data <- read.csv("data/athlete_nil_data.csv")
 combined_data <- read.csv("data/combined_nil_data.csv")
+map_data <- read.csv("data/nil_map_data.csv")
 
 
 # Gets all unique colleges and positions into a list:
@@ -173,6 +175,24 @@ ui <- navbarPage(
       mainPanel(
         plotOutput(outputId = "scatter"),
         textOutput("dynamicText"))
+    )
+  ),
+
+  tabPanel(
+    title = "Map",
+    sidebarLayout(
+      sidebarPanel(
+        sliderInput("minValue",
+                    "Minimum Dollar Value to Include:",
+                    min = 0,
+                    max = 1200000,
+                    value = 500000)
+      ),
+      
+      # Show a Leaflet map output
+      mainPanel(
+        leafletOutput("mymap")
+      )
     )
   )
 )
@@ -333,6 +353,56 @@ server <- function(input, output){
                 paste0(round(value * value, 2),
                 "% of the variability in Win/Loss Percentage is explained by ",
                        axis_labels[axis_choices == input$x_var])))
+  })
+  
+  
+  # MAP
+  
+  data_for_map <- reactive({
+    # Filters out removed schools and the slices by number of schools: 
+    data <- filter(map_data, avg_valuation >= input$minValue)
+    
+  })
+  
+  output$mymap <- renderLeaflet( {
+  map_data <- data_for_map()
+  
+  m <- leaflet() %>%
+    addTiles() %>% # Add default OpenStreetMap map tiles
+    setView(lng = -95.7129, lat = 37.0902, zoom = 3) # Set view over the USA
+  
+  # Add markers for start points
+  m <- m %>% addCircleMarkers(lng = map_data$long_last, lat = map_data$lat_last,
+                              radius = 4, color = "green", group = "points",
+                              label = paste(map_data$address_last, " (", str_to_title(map_data$Last.Team), ")", sep = ""))
+  
+  # Add markers for end points
+  m <- m %>% addCircleMarkers(lng = map_data$long_new, lat = map_data$lat_new,
+                              radius = 4, color = "red", group = "points",
+                              label = paste(map_data$address_new, " (", str_to_title(map_data$New.Team), ")", sep = ""))
+  
+  # Add edges between start and end points
+  
+  
+  for(i in 1:nrow(transfer_data)){
+    if(!is.na(transfer_data$avg_valuation[i])) {
+      m <- m %>% addPolylines(lng = c(map_data$long_last[i], map_data$long_new[i]), 
+                              lat = c(map_data$lat_last[i], map_data$lat_new[i]), 
+                              color = pal(map_data$avg_valuation[i]), 
+                              group = "lines",
+                              label = paste(str_to_title(map_data$Last.Team[i]),
+                                            " to ", str_to_title(map_data$New.Team[i]),
+                                            " Average NIL Valuation: ", map_data$avg_valuation[i], sep = ""))
+    }
+  }
+  
+  # Add layers control
+  m <- m %>% addLayersControl(overlayGroups = c("points", "lines"),
+                              options = layersControlOptions(collapsed = FALSE))
+  
+  m <- m %>% addLegend("bottomleft", pal = pal, values = map_data$avg_valuation,
+                       title = "Value",
+                       labFormat = labelFormat(suffix = " dollars ($)"))
   })
 }
 

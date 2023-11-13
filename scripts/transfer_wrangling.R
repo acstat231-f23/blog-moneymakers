@@ -23,7 +23,13 @@ library(stringr)
 library(dplyr)
 library(rvest)
 library(tidyr)
-
+library(tidyverse)
+library(scales)
+library(ggnetwork)
+library(igraph)
+library(tidygeocoder)
+library(sf)
+library(patchwork)
 
 ##############################################
 # Function to Convert Shortened String's     #
@@ -48,6 +54,11 @@ convert_string_to_int <- function(s) {
   
   numeric_value <- as.numeric(s)
   return(numeric_value * multiplier)
+}
+
+get_coords <- function(x) {
+  return(tibble(address = x) %>%
+    tidygeocoder::geocode(address, method = "osm"))
 }
 
 
@@ -119,6 +130,15 @@ for(i in 1 : length(urls)) {
     # Converts the nested list of School Data into a dataframe:
     last_school_data <- as.data.frame(do.call(cbind, list(last_text)))
     
+    #coords_results <- map_df(last_school_data$V1, get_coords)
+    
+    #safe_get_coords <- possibly(get_coords, otherwise = tibble(lat = NA_real_, lon = NA_real_, address = NA_character_))
+    
+    # Use the safe version with map_df
+    #coords_results <- map_df(last_school_data$V1, safe_get_coords)
+    #last_school_coords <- map_dfr(last_school_data$V1, get_coords, .id = "school_id")
+    
+    
     new_class <- ""
     multi_options <- ".MuiTypography-root.MuiLink-root.MuiLink-underlineNone.TransferPortalItem_predictionsContainer__2jMBE.MuiTypography-colorPrimary"
     if(length(html_elements(html, multi_options)) > 0) {
@@ -135,14 +155,14 @@ for(i in 1 : length(urls)) {
       html_elements(new_class) |>
       html_attr("href")
     
-    new_text <- ifelse(str_detect(new_text, "recruiting"), "unknown", new_text)
+    new_text <- ifelse(str_detect(new_text, "recruiting"), "undecided", new_text)
     
     new_text <- new_text |>
       str_remove("/college/") |>
       str_remove("/football/2023/industry-comparison-commits/") |>
       str_replace_all("-", " ")
     
-    new_text <- ifelse(is.na(new_text), "unknown", new_text)
+    new_text <- ifelse(is.na(new_text), "undecided", new_text)
     
     # Converts the nested list of School Data into a dataframe:
     new_school_data <- as.data.frame(do.call(cbind, list(new_text)))
@@ -165,13 +185,200 @@ for(i in 1 : length(urls)) {
   all_data$`NIL Valuation`[is.na(all_data$`NIL Valuation`)] <- 0
   arrange(all_data, `NIL Valuation`)
   
-  summarized_transfer_data <- all_data |>
-    group_by(`New Team`) |>
-    summarize(
-      total_nil_valuation = sum(`NIL Valuation`),
-      avg_valuation       = round(mean(`NIL Valuation`), 2),
-      number_athletes     = n()
-    ) |>
-    arrange(desc(total_nil_valuation))
+  
+  
+  
+  # Colleges:
+  
+  wiki_url <- "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+  wiki_html <- read_html(wiki_url)
+  
+  addresses_df <- wiki_html |>
+    html_elements("table") |>
+    pluck(1) |>
+    html_table() |>
+    mutate(name = tolower(paste(School, Nickname, sep = " "))) |>
+    mutate(location = paste(City, `State [2]`, sep=", ")) |>
+    mutate(coords = map_df(addresses_df$location, get_coords))
+  
+  # Manually setting Air Force Academy coordinates - only one that returned NA
+  addresses_df$coords$lat[1] <- 38.9984
+  addresses_df$coords$long[1] <- -104.8618
+
+  coords_df <- addresses_df |>
+    select(name, CurrentConference, coords)
+  
   
 
+  
+  wiki_url2 <- "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FCS_football_programs"
+  wiki_html2 <- read_html(wiki_url2)
+  
+  addresses_df2 <- wiki_html2 |>
+    html_elements("table") |>
+    pluck(1) |>
+    html_table() |>
+    mutate(name = tolower(paste(Team, Name, sep = " "))) |>
+    mutate(location = paste(City, `State[a]`, sep=", ")) |>
+    mutate(coords = map_df(addresses_df2$location, get_coords))
+  
+  coords_df2 <- addresses_df2 |>
+    rename("CurrentConference" = `Conference[b]`) |>
+    select(name, CurrentConference, coords)
+  
+  merge1 <-rbind(coords_df, coords_df2)
+  
+    
+    
+    merge2 <-inner_join(all_data, merge1, by = c("Last Team" = "name"))
+    
+    
+    merge3 <-inner_join(merge2, coords_df, by = c("New Team" = "name")) |>
+      unnest(coords.x) |>
+      rename(
+        "address_last" = address,
+        "lat_last" = lat,
+        "long_last" = long
+      ) |>
+      unnest(coords.y) |>
+      rename(
+        "address_new" = address,
+        "lat_new" = lat,
+        "long_new" = long
+      )  
+    
+    grouping_data <- merge3 |>
+      mutate(path = paste(merge3$`Last Team`, merge3$`New Team`, sep=","))
+    
+    summarized_transfer_data <- grouping_data |>
+      group_by(path) |>
+      summarize(
+        total_nil_valuation = sum(`NIL Valuation`),
+        avg_valuation       = round(mean(`NIL Valuation`), 2),
+        number_athletes     = n()
+      ) |>
+      arrange(desc(total_nil_valuation))
+    summarized_transfer_data <- summarized_transfer_data |>
+      separate(path, into = c("Last Team", "New Team"), sep = ",")
+    
+    prepped_data <- inner_join(summarized_transfer_data, merge1, by = c("Last Team" = "name"))
+    prepped_data <- inner_join(prepped_data, merge1, by = c("New Team" = "name"))
+    
+    prepped_data <- prepped_data |>
+      unnest(coords.x) |>
+      rename(
+        "address_last" = address,
+        "lat_last" = lat,
+        "long_last" = long
+      ) |>
+      unnest(coords.y) |>
+      rename(
+        "address_new" = address,
+        "lat_new" = lat,
+        "long_new" = long
+      )  
+
+  # IGRAPH:
+  transfer_igraph <- prepped_data %>%
+    select(`Last Team`, `New Team`, everything()) %>%
+    graph_from_data_frame(directed = TRUE)
+  
+  
+  class(transfer_igraph)
+  
+  vcount(transfer_igraph) # node count
+  ecount(transfer_igraph) # edge count
+  
+  degree(transfer_igraph, mode = "in")|> 
+    sort(decreasing = TRUE)|>
+    head()
+  
+  
+  # Get weighted degree centrality
+  transfer_weights <- edge_attr(transfer_igraph, name = "NIL Valuation")
+  
+  # Total movement out 
+  strength(transfer_igraph, weights = transfer_weights, mode = "out") |>
+    sort(decreasing = TRUE) |>
+    head()
+  
+  # Total movement out 
+  strength(transfer_igraph, weights = transfer_weights, mode = "in") |>
+    sort(decreasing = TRUE) |>
+    head()
+  
+
+  
+  school_sample <- sample(unique(prepped_data$`Last Team`), 30)
+  
+  sample_data <- prepped_data |>
+    filter(`Last Team` %in% school_sample &
+             `New Team` %in% school_sample)
+  
+  sample_igraph <- sample_data |>
+    select(`Last Team`, `New Team`, everything()) %>%
+    graph_from_data_frame(directed = TRUE)
+    
+  unique(sample_data$address_new)
+  
+  transfer_data <- ggnetwork(transfer_igraph)
+  
+  
+  network_plot <- ggplot() +
+    geom_segment(data = prepped_data, aes(x = long_last, y = lat_last, xend = long_new, yend = lat_new, color = avg_valuation), size = 0.5) +
+    geom_point(data = prepped_data, aes(x = long_last, y = lat_last), color = "red", size = 3) +
+    geom_point(data = prepped_data, aes(x = long_new, y = lat_new), color = "green", size = 3) +
+    scale_color_gradient(low = "blue", high = "red") +
+    theme_minimal() +
+    coord_fixed(1.3)
+  
+  # Get map data for the USA
+  usa_map <- map_data("state")
+  
+  # Overlay the USA map over the network, specifying aesthetics just for this layer
+  map_overlay <- network_plot +
+    geom_polygon(data = usa_map, aes(x = long, y = lat, group = group), fill = NA, color = "black", size = 0.25) +
+    theme_void() +  # Remove axes and background for a clean map overlay
+    labs(title = "College Football Transfers",
+         color = "NIL Valuation per Transfer") +
+    theme_blank() +
+    theme(legend.position = "bottom", legend.box="vertical"
+          , legend.key.width=unit(2,"cm"))
+  
+  
+  pal <- colorNumeric(palette = "Blues", domain = prepped_data$avg_valuation)
+  
+  m <- leaflet() %>%
+    addTiles() %>% # Add default OpenStreetMap map tiles
+    setView(lng = -95.7129, lat = 37.0902, zoom = 4) # Set view over the USA
+  
+  # Add markers for start points
+  m <- m %>% addCircleMarkers(lng = prepped_data$long_last, lat = prepped_data$lat_last, radius = 4, color = "green", group = "points")
+  
+  # Add markers for end points
+  m <- m %>% addCircleMarkers(lng = prepped_data$long_new, lat = prepped_data$lat_new, radius = 4, color = "red", group = "points")
+  
+  # Add edges between start and end points
+  
+  
+  for(i in 1:nrow(transfer_data)){
+    if(!is.na(transfer_data$avg_valuation[i])) {
+    m <- m %>% addPolylines(lng = c(prepped_data$long_last[i], prepped_data$long_new[i]), 
+                            lat = c(prepped_data$lat_last[i], prepped_data$lat_new[i]), 
+                            color = pal(prepped_data$avg_valuation[i]), 
+                            group = "lines")
+    }
+  }
+  
+  # Add layers control
+  m <- m %>% addLayersControl(overlayGroups = c("points", "lines"),
+                              options = layersControlOptions(collapsed = FALSE))
+  
+  m <- m %>% addLegend("bottomleft", pal = pal, values = prepped_data$avg_valuation,
+                       title = "Value",
+                       labFormat = labelFormat(suffix = " dollars ($)"))
+  
+  # Print the map
+  m
+  
+  write.csv(prepped_data, "nil_map_data.csv")
