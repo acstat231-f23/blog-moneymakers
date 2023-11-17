@@ -82,9 +82,8 @@ urls = c("https://www.on3.com/transfer-portal/top/football/2023/?position=qb&ord
 
 
 # Creating an empty data set with 7 columns and labeling them:
-all_data <- data.frame(matrix(ncol = 4, nrow = 0))
-colnames(all_data) <- c("Name", "NIL Valuation", "Last Team", "New Team")
-
+all_data <- data.frame(matrix(ncol = 6, nrow = 0))
+colnames(all_data) <- c("Name", "High School", "Position", "NIL Valuation", "Last Team", "New Team")
 
 
 #############################################
@@ -109,6 +108,23 @@ for(i in 1 : length(urls)) {
     name_val_data <- as.data.frame(do.call(cbind, list(name_text)))
     
     
+    rating_class_name <- ".StarRating_overallRating__MTh52.StarRating_bolded__kr_6V.StarRating_border__DffWl"
+    rating_text <- html |>
+      html_elements(rating_class_name) |>
+      html_text()
+    
+    # Coverts the nested list of NIL Data into a dataframe:
+    rating_val_data <- as.data.frame(do.call(cbind, list(rating_text)))
+    
+    
+    pos_class_name <- ".MuiTypography-root.TransferPortalItem_position__6sxbf.MuiTypography-body1.MuiTypography-colorTextPrimary"
+    pos_text <- html |>
+      html_elements(pos_class_name) |>
+      html_text()
+    
+    # Coverts the nested list of NIL Data into a dataframe:
+    pos_val_data <- as.data.frame(do.call(cbind, list(pos_text)))
+    
     # Retrieves all NIL Valuation data:
     nil_class_name <- ".MuiTypography-root.TransferPortalItem_nilValuation__nWAKv.MuiTypography-body1.MuiTypography-colorTextPrimary"
     nil_text <- html |>
@@ -118,6 +134,15 @@ for(i in 1 : length(urls)) {
     # Coverts the nested list of NIL Data into a dataframe:
     nil_val_data <- as.data.frame(do.call(cbind, list(nil_text)))
     
+    
+    
+    hs_class_name <- ".MuiTypography-root.TransferPortalItem_highSchool__kmetG.MuiTypography-body1.MuiTypography-colorTextPrimary"
+    hs_text <- html |>
+      html_elements(hs_class_name) |>
+      html_text()
+    
+    # Coverts the nested list of NIL Data into a dataframe:
+    hs_val_data <- as.data.frame(do.call(cbind, list(hs_text)))
     
     last_class <- ".MuiTypography-root.MuiLink-root.MuiLink-underlineNone.TransferPortalItem_lastTeam__1zqJn.MuiTypography-colorPrimary"
     last_text <- html |>
@@ -130,13 +155,7 @@ for(i in 1 : length(urls)) {
     # Converts the nested list of School Data into a dataframe:
     last_school_data <- as.data.frame(do.call(cbind, list(last_text)))
     
-    #coords_results <- map_df(last_school_data$V1, get_coords)
     
-    #safe_get_coords <- possibly(get_coords, otherwise = tibble(lat = NA_real_, lon = NA_real_, address = NA_character_))
-    
-    # Use the safe version with map_df
-    #coords_results <- map_df(last_school_data$V1, safe_get_coords)
-    #last_school_coords <- map_dfr(last_school_data$V1, get_coords, .id = "school_id")
     
     
     new_class <- ""
@@ -168,6 +187,8 @@ for(i in 1 : length(urls)) {
     new_school_data <- as.data.frame(do.call(cbind, list(new_text)))
 
     position_data <- cbind(name_val_data) |>
+      cbind(hs_val_data) |>
+      cbind(pos_val_data) |>
       cbind(nil_val_data) |>
       cbind(last_school_data) |>
       cbind(new_school_data)
@@ -178,7 +199,7 @@ for(i in 1 : length(urls)) {
   }
 }
 
-  names(all_data) <- c("Name", "NIL Valuation", "Last Team", "New Team")
+  names(all_data) <- c("Name", "High School", "Position", "NIL Valuation", "Last Team", "New Team")
   all_data <- all_data |>
     mutate("NIL Valuation" = map_dbl(`NIL Valuation`, convert_string_to_int))
   
@@ -198,7 +219,9 @@ for(i in 1 : length(urls)) {
     pluck(1) |>
     html_table() |>
     mutate(name = tolower(paste(School, Nickname, sep = " "))) |>
-    mutate(location = paste(City, `State [2]`, sep=", ")) |>
+    mutate(location = paste(City, `State [2]`, sep=", "))
+  
+  addresses_df <- addresses_df |>
     mutate(coords = map_df(addresses_df$location, get_coords))
   
   # Manually setting Air Force Academy coordinates - only one that returned NA
@@ -219,7 +242,9 @@ for(i in 1 : length(urls)) {
     pluck(1) |>
     html_table() |>
     mutate(name = tolower(paste(Team, Name, sep = " "))) |>
-    mutate(location = paste(City, `State[a]`, sep=", ")) |>
+    mutate(location = paste(City, `State[a]`, sep=", "))
+  
+  addresses_df2 <- addresses_df2 |>
     mutate(coords = map_df(addresses_df2$location, get_coords))
   
   coords_df2 <- addresses_df2 |>
@@ -382,3 +407,4 @@ for(i in 1 : length(urls)) {
   m
   
   write.csv(prepped_data, "nil_map_data.csv")
+  write.csv(all_data, "athlete_transfer_data.csv")

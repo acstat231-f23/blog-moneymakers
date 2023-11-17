@@ -23,11 +23,14 @@ library(leaflet)
 athlete_data <- read.csv("data/athlete_nil_data.csv")
 combined_data <- read.csv("data/combined_nil_data.csv")
 map_data <- read.csv("data/nil_map_data.csv")
+nil_transfer_data <- read.csv("data/athlete_transfer_nil_data.csv")
 
 
 # Gets all unique colleges and positions into a list:
 college_choices <- as.list(unique(athlete_data$College))
 position_choices <- as.list(unique(athlete_data$Position))
+last_team_choices <<- as.list(map_data$Last.Team)
+new_team_choices <<- as.list(map_data$New.Team)
 
 # Converts variable names into display names:
 axis_choices <- as.list(c("total_nil_valuation", "avg_valuation"))
@@ -179,19 +182,41 @@ ui <- navbarPage(
   ),
 
   tabPanel(
-    title = "Map",
+    title = "Map: Follow The Money",
     sidebarLayout(
       sidebarPanel(
         sliderInput("minValue",
                     "Minimum Dollar Value to Include:",
                     min = 0,
                     max = 1200000,
-                    value = 500000)
+                    value = 100000),
+        
+        sliderInput("maxValue",
+                    "Maximum Dollar Value to Include:",
+                    min = 0,
+                    max = 1200000,
+                    value = 1200000),
+        
+        radioButtons(inputId = "whichWay"
+                     , label = "Choose an Option:"
+                     , choices = c("Old School -> New School" = "o_n",
+                                 "New School -> Old School" = "n_o")),
+        
+        selectizeInput(inputId = "displayTeams"
+                       , label = "Choose one or more teams:"
+                       , choices = last_team_choices
+                       , multiple = TRUE),
+        
+        selectizeInput(inputId = "deltaTeams"
+                       , label = "OPTIONS"
+                       , choices = NULL
+                       , multiple = TRUE)
       ),
       
       # Show a Leaflet map output
       mainPanel(
-        leafletOutput("mymap")
+        leafletOutput("mymap"),
+        DT::dataTableOutput(outputId = "map_table")
       )
     )
   )
@@ -202,7 +227,7 @@ ui <- navbarPage(
 ## Server Code for App ##
 #########################
 
-server <- function(input, output){
+server <- function(input, output, session){
   
   options(scipen = 999) # prevents scientific notation
   
@@ -360,12 +385,86 @@ server <- function(input, output){
   
   data_for_map <- reactive({
     # Filters out removed schools and the slices by number of schools: 
-    data <- filter(map_data, avg_valuation >= input$minValue)
+    data <- filter(map_data, avg_valuation >= input$minValue & avg_valuation <= input$maxValue)
+  
     
   })
   
+
+  observeEvent(input$whichWay, {
+    if(input$whichWay == "n_o") {# New to old
+      updateSelectizeInput(session, "displayTeams", choices = new_team_choices)
+    } else {
+      updateSelectizeInput(session, "displayTeams", choices = last_team_choices)
+    }
+    updateSelectizeInput(session, "deltaTeams", choices = character(0))
+  })
+  
+  data_for_map_table <- reactive({
+      data <- nil_transfer_data
+      
+      names(data) <- c("X", "Athlete", "High School", "Position", "Rating",
+                       "NIL Valuation", "Total Followers", "Past School", "New School")
+      # Removes X column:
+      data <- select(data, -X)
+  })
+  
+  
+
+  
+  selectedData <- reactive({
+
+    display_data <- data_for_map_table()
+
+    if(input$whichWay == "o_n") {
+      data <- display_data |>
+        filter(`Past School` %in% input$displayTeams) |>
+        filter(`New School` %in% input$deltaTeams)
+    } else {
+      data <- display_data |>
+        filter(`New School` %in% input$displayTeams) |>
+        filter(`Past School` %in% input$deltaTeams)
+    }
+    
+    
+  })
+
+  
+  output$map_table <- renderDataTable({
+    # Fetch the data to display
+    selectedData()
+  })
+    
+
+ # testing1 <- filter(nil_transfer_data, Last.Team %in% c("alabama crimson tide"))$New.Team
+  
+  
+  observe({
+    
+    if(!is.null(input$displayTeams)) {
+      #is_repeat <- TRUE
+      if(input$whichWay == "n_o") {# New to old
+        old_team_choices_active <- filter(data_for_map_table(), `New School` %in% input$displayTeams)$`Past School`
+        updateSelectizeInput(session, "deltaTeams", choices = old_team_choices_active)
+        } else {
+      new_team_choices_active <- filter(data_for_map_table(), `Past School` %in% input$displayTeams)$`New School`
+      updateSelectizeInput(session, "deltaTeams", choices = new_team_choices_active)
+        }
+    } else {
+      updateSelectizeInput(session, "deltaTeams", choices = character(0))
+    }
+    
+  })
+  
+  
+  
+  
+
+  
   output$mymap <- renderLeaflet( {
   map_data <- data_for_map()
+  
+  pal <- colorNumeric(palette = "Blues", domain = map_data$avg_valuation)
   
   m <- leaflet() %>%
     addTiles() %>% # Add default OpenStreetMap map tiles
@@ -384,8 +483,8 @@ server <- function(input, output){
   # Add edges between start and end points
   
   
-  for(i in 1:nrow(transfer_data)){
-    if(!is.na(transfer_data$avg_valuation[i])) {
+  for(i in 1:nrow(map_data)){
+    if(!is.na(map_data$avg_valuation[i])) {
       m <- m %>% addPolylines(lng = c(map_data$long_last[i], map_data$long_new[i]), 
                               lat = c(map_data$lat_last[i], map_data$lat_new[i]), 
                               color = pal(map_data$avg_valuation[i]), 
