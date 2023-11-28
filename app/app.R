@@ -17,6 +17,7 @@ library(shinythemes)
 library(DT)
 library(ggrepel)
 library(leaflet)
+library(htmltools)
 
 
 # Read all data:
@@ -24,6 +25,7 @@ athlete_data <- read.csv("data/athlete_nil_data.csv")
 combined_data <- read.csv("data/combined_nil_data.csv")
 map_data <- read.csv("data/nil_map_data.csv")
 nil_transfer_data <- read.csv("data/athlete_transfer_nil_data.csv")
+predictor_data <- read.csv("data/predictor_data.csv")
 
 
 # Gets all unique colleges and positions into a list:
@@ -31,6 +33,7 @@ college_choices <- as.list(unique(athlete_data$College))
 position_choices <- as.list(unique(athlete_data$Position))
 last_team_choices <<- as.list(map_data$Last.Team)
 new_team_choices <<- as.list(map_data$New.Team)
+conference_choices <- as.list(unique(predictor_data$NewConf))
 
 # Converts variable names into display names:
 axis_choices <- as.list(c("total_nil_valuation", "avg_valuation"))
@@ -41,6 +44,8 @@ names(axis_choices) <- axis_labels
 # Options for Raido Buttons
 on_off <- as.list(c("Select All", "Deselect All"))
 
+
+predictor_model <- glm(binomialRep ~ NIL.Valuation + Followers + Rating + Position + NewConf, data = predictor_data, family = binomial)
 
 #####################
 ## UI Code for App ##
@@ -217,6 +222,41 @@ ui <- navbarPage(
       mainPanel(
         leafletOutput("mymap"),
         DT::dataTableOutput(outputId = "map_table")
+      )
+    )
+  ),
+  
+  tabPanel(
+    title = "Will My Athlete Transfer?",
+    sidebarLayout(
+      sidebarPanel(
+        sliderInput(inputId = "nilValue",
+                    "Enter the NIL Valuation for your Athlete:",
+                    min = 0,
+                    max = 1200000,
+                    value = 100000),
+        sliderInput(inputId = "ratingValue",
+                    "Enter the Rating for your Athlete:",
+                    min = 50,
+                    max = 100,
+                    value = 85),
+        sliderInput(inputId = "followersValue",
+                    "Enter the Number of Followers for your Athlete:",
+                    min = 0,
+                    max = 2000000,
+                    value = 50000),
+        selectizeInput(inputId = "positionValue"
+                       , label = "Select a Position for your Athlete:"
+                       , choices = position_choices
+                       , multiple = FALSE),
+        selectizeInput(inputId = "confValue"
+                       , label = "Select the Conference your Athlete wants to Transfer to:"
+                       , choices = conference_choices
+                       , multiple = FALSE),
+        actionButton("calculateProb", "Calculate Transfer Probability")
+      ),
+      mainPanel (
+        textOutput("text")
       )
     )
   )
@@ -489,9 +529,11 @@ server <- function(input, output, session){
                               lat = c(map_data$lat_last[i], map_data$lat_new[i]), 
                               color = pal(map_data$avg_valuation[i]), 
                               group = "lines",
-                              label = paste(str_to_title(map_data$Last.Team[i]),
-                                            " to ", str_to_title(map_data$New.Team[i]),
-                                            " Average NIL Valuation: ", map_data$avg_valuation[i], sep = ""))
+                              label = HTML(paste("<b>", str_to_title(map_data$Last.Team[i]),
+                                                 " to ", str_to_title(map_data$New.Team[i]), "</b>",
+                                                 "<br/>Average NIL Valuation: ", map_data$avg_valuation[i],
+                                                 "<br/>Number of Transfers: ", map_data$number_athletes[i], sep = "")))
+      
     }
   }
   
@@ -503,6 +545,20 @@ server <- function(input, output, session){
                        title = "Value",
                        labFormat = labelFormat(suffix = " dollars ($)"))
   })
+  
+  
+  observeEvent(input$calculateProb, {
+    
+    test_data <- data.frame(NIL.Valuation = input$nilValue, 
+                            Followers = input$followersValue, 
+                            Rating = input$ratingValue, 
+                            Position = input$positionValue,
+                            NewConf = input$confValue)
+    
+    prediction <- predict(predictor_model, newdata = test_data, type = "response")
+    output$text <- renderText(paste("Probability of Your Athlete Transfering is: ", (round(prediction, 4) * 100), "%", sep=""))
+  })
+  
 }
 
 shinyApp(ui = ui, server = server) # call to shinyApp

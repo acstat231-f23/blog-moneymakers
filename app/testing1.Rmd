@@ -1,0 +1,100 @@
+---
+title: "tester1"
+output: pdf
+date: "2023-11-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(shiny)
+library(dplyr)
+library(plotly)
+library(tidyverse)
+library(mdsr)
+library(lubridate)
+library(kableExtra)
+library(shinythemes)
+library(DT)
+library(ggrepel)
+library(leaflet)
+library(htmltools)
+library(mosaic)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+data1 <- read.csv("testing1.csv")
+combined_data <- read.csv("data/athlete_transfer_nil_data.csv") 
+combined_data <- combined_data |>
+  na.omit()
+selected_data <- read.csv("testing2.csv")
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+
+
+tally(~ didTransfer + Position, data = selected_data)
+mosaicplot(~ didTransfer + Position, data = selected_data)
+w1 <- glm(binomialRep ~ NIL.Valuation + Followers + Rating + Position + NewConf, data = selected_data, family = binomial)
+msummary(w1)
+
+
+
+```
+
+```{r}
+test_data <- data.frame(NIL.Valuation = 50000, 
+                    Followers = 99999, 
+                    Rating = 99, 
+                    Position = "WR",
+                    NewConf = "American")
+
+predictions <- predict(w1, newdata = test_data, type = "response"); predictions
+```
+
+
+
+```{r}
+ggplot(data1, aes(x = Position, y = count, fill = New.Team)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  theme_minimal() +
+  labs(title = "Comparative Bar Graph of Position and Final Team",
+       x = "Position",
+       y = "Count",
+       fill = "Final Team")
+
+gf_boxplot(New.Team ~ Position, data = data1, title = "BComparative Bar Graph of Position and Final Team") +
+ # scale_y_continuous(expand = c(0,0), limits=c(5, 10)) +
+   labs(
+    x = "Position",
+    y = "Final team"
+  )
+favstats(New.Team ~ Position, data = data1)
+```
+
+```{r}
+gf_boxplot(New.Team ~ NIL.Valuation, data = combined_data, title = "Bar Graph of NIL Valuation and Final Team") +
+ # scale_y_continuous(expand = c(0,0), limits=c(5, 10)) +
+   labs(
+    x = "NIL Valuation",
+    y = "Final Team"
+  )
+favstats(New.Team ~ Position, data = combined_data)
+```
+
+```{r}
+lm1 <- glm(New.Team ~ NIL.Valuation + Rating + Followers, data = combined_data, family = "multinomial")
+msummary(lm1)
+vif(lm1)
+```
+

@@ -138,7 +138,7 @@ for(i in 1 : length(urls)) {
     ratings_data <- nil_data |>
       select(V5) |>
       mutate(V5 = as.numeric(V5)) |>
-      mutate(V5 = replace_na(V5, 0))
+      mutate(V5 = replace_na(V5, 50))
     
     
     # Merges name, high school, position, rating, college,
@@ -186,6 +186,47 @@ for(i in 1 : length(urls)) {
     arrange(desc(total_nil_valuation))
   
   
+  # Confs:
+  wiki_url <- "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs"
+  wiki_html <- read_html(wiki_url)
+  
+  confs1 <- wiki_html |>
+    html_elements("table") |>
+    pluck(1) |>
+    html_table() |>
+    mutate(name = tolower(paste(School, Nickname, sep = " "))) |>
+    select(CurrentConference, name)  |>
+    rename("Conference" = CurrentConference)
+  
+  wiki_url2 <- "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FCS_football_programs"
+  wiki_html2 <- read_html(wiki_url2)
+  
+  confs2 <- wiki_html2 |>
+    html_elements("table") |>
+    pluck(1) |>
+    html_table() |>
+    mutate(name = tolower(paste(Team, Name, sep = " "))) |>
+    select(`Conference[b]`, name) |>
+    rename("Conference" = `Conference[b]`)
+
+  all_confs <- rbind(confs1, confs2)
+  all_confs <- all_confs |>
+    mutate(Conference = ifelse(grepl("Pac-12", Conference), "Pac-12", Conference)) |>
+    mutate(Conference = ifelse(grepl("Big 12", Conference), "Big 12", Conference)) |>
+    mutate(Conference = ifelse(grepl("Independent", Conference), "Independent", Conference)) |>
+    mutate(Conference = ifelse(grepl("Mountain West", Conference), "Mountain West", Conference)) |>
+    mutate(Conference = ifelse(grepl("American", Conference), "American", Conference)) |>
+    mutate(Conference = ifelse(grepl("Big South-OVC", Conference), "Big South-OVC", Conference)) |>
+    mutate(Conference = ifelse(grepl("Missouri Valley", Conference), "Missouri Valley", Conference)) |>
+    mutate(Conference = ifelse(grepl("Big Sky", Conference), "Big Sky", Conference)) |>
+    mutate(name = str_to_title(name))
+  
+  all_data$College[all_data$College == "Texas Am Aggies"] <- "Texas A&M Aggies"
+  all_confs$name[all_confs$name == "Miami (Fl) Hurricanes"] <- "Miami Hurricanes"
+  all_data$College[all_data$College == "Miami Oh Redhawks"] <- "Miami (Oh) Redhawks"
+  
+  all_data <- left_join(all_data, all_confs, by = c("College" = "name"))
   # Downloads both dataframes as CSVs:
+  write.csv(all_confs, "confs_teams.csv")
   write.csv(all_data, "athlete_nil_data.csv")
   write.csv(summarized_nil_data, "school_nil_data.csv")
