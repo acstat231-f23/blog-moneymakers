@@ -1,7 +1,7 @@
 ---
-title: "Your Project Title Here"
-author: "Your team member names here"
-date: "Add a date"
+title: "Money Makers"
+author: "Tucker, Wolfie, Naaveen"
+date: "November 29, 2023"
 output:
   rmdformats::readthedown:
     highlight: "kate"
@@ -17,6 +17,7 @@ options(knitr.kable.NA = '')
 
 # Load packages
 library(tidyverse)
+library(rmdformats)
 
 ```
 
