@@ -272,7 +272,7 @@ server <- function(input, output, session){
   options(scipen = 999) # prevents scientific notation
   
   # Tab 1: Table:
-  data_for_table <- reactive({
+  data_for_table <- reactive({ # DEBUG HERE
     
     if(input$is_all == "Select All") {
       # Adds every school to data if selecting all:
@@ -286,7 +286,7 @@ server <- function(input, output, session){
     }
     # Renames variables for better visual display:
     names(data) <- c("X", "Athlete", "High School", "Position", "Rating",
-                     "College", "NIL Valuation", "Total Followers")
+                     "College", "NIL Valuation", "Total Followers", "Conference")
     # Removes X column:
     data <- select(data, -X)
   })

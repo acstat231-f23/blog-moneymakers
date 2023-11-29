@@ -226,6 +226,8 @@ for(i in 1 : length(urls)) {
   all_data$College[all_data$College == "Miami Oh Redhawks"] <- "Miami (Oh) Redhawks"
   
   all_data <- left_join(all_data, all_confs, by = c("College" = "name"))
+  all_data <- all_data |>
+    na.omit()
   # Downloads both dataframes as CSVs:
   write.csv(all_confs, "confs_teams.csv")
   write.csv(all_data, "athlete_nil_data.csv")

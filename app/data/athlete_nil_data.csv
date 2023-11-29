@@ -32,7 +32,6 @@
 "31","Jermaine Mathews","CB /Winton WoodsCincinnati, OH","CB",96.23,"Ohio State Buckeyes",212000,43000,"Big Ten"
 "32","Quincy Riley","CB /A C FloraColumbia, SC","CB",83.5,"Louisville Cardinals",212000,7000,"ACC"
 "33","Julian Humphrey","CB /Clear LakeHouston, TX","CB",94.9,"Georgia Bulldogs",212000,458000,"SEC"
-"34","Ryan Watts","CB /Little ElmLittle Elm, TX","CB",91.93,"Recruits",207000,65000,NA
 "35","A.J. Harris","CB /CentralPhenix City, AL","CB",96.6,"Georgia Bulldogs",203000,18200,"SEC"
 "36","Marcellas Dial","CB /WoodruffWoodruff, SC","CB",82.5,"South Carolina Gamecocks",202000,4300,"SEC"
 "37","Ricardo Hallman","CB /TRU Prep AcademyMiami Gardens, FL","CB",86.5,"Wisconsin Badgers",199000,6500,"Big Ten"
@@ -62,7 +61,6 @@
 "61","Jacobe Johnson","CB /MustangMustang, OK","CB",93.48,"Oklahoma Sooners",131000,12600,"Big 12"
 "62","Aydan White","CB /Christ SchoolArden, NC","CB",85.97,"Nc State Wolfpack",131000,2500,"ACC"
 "63","Jaylon Braxton","CB /Lone StarFrisco, TX","CB",93.44,"Arkansas Razorbacks",129000,19000,"SEC"
-"64","Jarrian Jones","CB /Northwest RankinFlowood, MS","CB",91.05,"Recruits",126000,33000,NA
 "65","Daylen Austin","CB /Long Beach PolyLong Beach, CA","CB",93.93,"Oregon Ducks",126000,24000,"Pac-12"
 "66","Jordan Matthews","CB /WoodlawnBaton Rouge, LA","CB",93.28,"Tennessee Volunteers",126000,14700,"SEC"
 "67","Domani Jackson","CB /Mater DeiSanta Ana, CA","CB",98.57,"Usc Trojans",124000,36000,"Pac-12"
@@ -177,7 +175,6 @@
 "176","Jalon Walker","LB /SalisburySalisbury, NC","LB",96.07,"Georgia Bulldogs",101000,23000,"SEC"
 "177","Blake Nichelson","LB /MantecaRipon, CA","LB",92.49,"Florida State Seminoles",101000,16600,"ACC"
 "178","Cam Riley","LB /HillcrestEvergreen, AL","LB",90.69,"Auburn Tigers",101000,9400,"SEC"
-"179","Donovan Manuel","LB /StockbridgeStockbridge, GA","LB",50,"Fiu Golden Panthers",100000,2800,NA
 "180","Wesley Steiner","LB /Houston CountyWarner Robins, GA","LB",93.86,"Auburn Tigers",100000,8400,"SEC"
 "181","Arvell Reese","LB /GlenvilleCleveland, OH","LB",92.26,"Ohio State Buckeyes",99000,6800,"Big Ten"
 "182","Eric Gentry","LB /Neumann GorettiPhiladelphia, PA","LB",87.22,"Usc Trojans",97000,1800,"Pac-12"
@@ -188,7 +185,6 @@
 "187","Xavian Sorey","LB /IMG AcademyBradenton, FL","LB",96.09,"Georgia Bulldogs",95000,13900,"SEC"
 "188","Kobe King","LB /Cass TechnicalDetroit, MI","LB",88.1,"Penn State Nittany Lions",95000,10800,"Big Ten"
 "189","Jaiden Ausberry","LB /University LabBaton Rouge, LA","LB",92.39,"Notre Dame Fighting Irish",94000,10700,"Independent"
-"190","Dominic DeLuca","LB /WyomingPittston, PA","LB",50,"Recruits",94000,8700,NA
 "191","Grayson Howard","LB /Andrew JacksonJacksonville, FL","LB",92.3,"South Carolina Gamecocks",93000,14400,"SEC"
 "192","Langston Patterson","LB /Christ Presbyterian AcademyNashville, TN","LB",87.78,"Vanderbilt Commodores",93000,2700,"SEC"
 "193","Ta'Mere Robinson","LB /BrashearPittsburgh, PA","LB",91.19,"Penn State Nittany Lions",93000,14800,"Big Ten"
@@ -208,7 +204,6 @@
 "207","DJ Hicks","DL /PaetowKaty, TX","DL",98.98,"Texas A&M Aggies",437000,24000,"SEC"
 "208","Bear Alexander","DL /IMG AcademyDenton, TX","DL",96.33,"Usc Trojans",429000,43000,"Pac-12"
 "209","Jared Ivey","DL /North GwinnettSuwanee, GA","DL",89.89,"Ole Miss Rebels",424000,5700,"SEC"
-"210","Jamree Kromah","DL /Charles Herbert FlowersUpper Marlboro, MD","DL",79.15,"Recruits",382000,1300,NA
 "211","Lee Hunter","DL /BlountEight Mile, AL","DL",94.34,"Ucf Knights",352000,15600,"Big 12"
 "212","Brandon Dorlus","DL /Deerfield BeachDeerfield Beach, FL","DL",85.03,"Oregon Ducks",352000,10700,"Pac-12"
 "213","T.J. Sanders","DL /MarionMarion, SC","DL",86.23,"South Carolina Gamecocks",338000,4400,"SEC"
@@ -223,9 +218,7 @@
 "222","Patrick Jenkins","DL /John EhretMarrero, LA","DL",91.76,"Tulane Green Wave",246000,3800,"American"
 "223","Mason Graham","DL /ServiteAnaheim, CA","DL",90.19,"Michigan Wolverines",246000,5600,"Big Ten"
 "224","Leonard Taylor","DL /Miami PalmettoMiami, FL","DL",98.68,"Miami Hurricanes",242000,29000,"ACC"
-"225","Marcus Harris","DL /Park CrossingMontgomery, AL","DL",80.77,"Recruits",240000,12800,NA
 "226","Jordan Hall","DL /WestsideJacksonville, FL","DL",97.33,"Georgia Bulldogs",240000,17700,"SEC"
-"227","Jon Seaton","DL /HillsboroughHillsborough, NJ","DL",50,"Recruits",231000,1900000,NA
 "228","Matayo Uiagalelei","DL /St. John BoscoBellflower, CA","DL",96.57,"Oregon Ducks",208000,42000,"Pac-12"
 "229","Daevin Hobbs","DL /Jay M RobinsonConcord, NC","DL",96.17,"Tennessee Volunteers",208000,14100,"SEC"
 "230","Nash Hutmacher","DL /ChamberlainChamberlain, SD","DL",86.87,"Nebraska Cornhuskers",193000,15900,"Big Ten"
@@ -259,8 +252,6 @@
 "258","Desmond Watson","DL /ArmwoodSeffner, FL","DL",89.33,"Florida Gators",108000,36000,"SEC"
 "259","Tony Bradford","DL /North ShoreHouston, TX","DL",82.97,"Texas Tech Red Raiders",107000,3800,"Big 12"
 "260","Ty Hamilton","DL /Pickerington CentralPickerington, OH","DL",85.9,"Ohio State Buckeyes",107000,109000,"Big Ten"
-"261","Joshua Farmer","DL /Gadsden CountyApalachicola, FL","DL",86.83,"Recruits",106000,13100,NA
-"262","Fabien Lovett","DL /Olive BranchOlive Branch, MS","DL",88.73,"Recruits",105000,16700,NA
 "263","Joe Golden","DL /DohertyGreeley, CO","DL",50,"Oregon State Beavers",104000,1200,"Pac-12"
 "264","Jamaal Jarrett","DL /GrimsleyGreensboro, NC","DL",92.39,"Georgia Bulldogs",103000,33000,"SEC"
 "265","Will Norman","DL /EastsideCamden, NJ","DL",91.93,"Florida Gators",102000,39000,"SEC"
@@ -285,7 +276,6 @@
 "284","Nazir Stackhouse","DL /ColumbiaDecatur, GA","DL",90.78,"Georgia Bulldogs",92000,77000,"SEC"
 "285","Isaiah Raikes","DL /St. Augustine PrepRichland, NJ","DL",89.02,"Texas A&M Aggies",92000,18700,"SEC"
 "286","Jayson Jones","DL /CaleraCalera, AL","DL",89.7,"Auburn Tigers",91000,10200,"SEC"
-"287","Zykeivous Walker","DL /Schley CountyEllaville, GA","DL",94.49,"Recruits",91000,6900,NA
 "288","Darron Reed","DL /CarverColumbus, GA","DL",92.44,"Auburn Tigers",91000,4900,"SEC"
 "289","Warren Brinson","DL /IMG AcademyBradenton, FL","DL",90.3,"Georgia Bulldogs",91000,26000,"SEC"
 "290","Ty Robinson","DL /HigleyGilbert, AZ","DL",92.61,"Nebraska Cornhuskers",91000,10600,"Big Ten"
@@ -298,7 +288,6 @@
 "297","Aaron Bryant","DL /SouthavenSouthaven, MS","DL",90.08,"Texas Longhorns",88000,2400,"Big 12"
 "298","Tyrion Ingram-Dawkins","DL /GaffneyGaffney, SC","DL",93.96,"Georgia Bulldogs",86000,17600,"SEC"
 "299","Zane Durant","DL /Lake NonaOrlando, FL","DL",90.05,"Penn State Nittany Lions",85000,8000,"Big Ten"
-"300","Xzavier McLeod","DL /CamdenCamden, SC","DL",92.16,"Recruits",84000,10100,NA
 "301","Laiatu Latu","EDGE /JesuitCarmichael, CA","EDGE",93.63,"Ucla Bruins",730000,6000,"Pac-12"
 "302","Chris Braswell","EDGE /St. Frances AcademyBaltimore, MD","EDGE",98.09,"Alabama Crimson Tide",704000,17700,"SEC"
 "303","Jonah Elliss","EDGE /Moscow SeniorMoscow, ID","EDGE",83.53,"Utah Utes",695000,1800,"Pac-12"
@@ -312,10 +301,8 @@
 "311","Princely Umanmielen","EDGE /ManorManor, TX","EDGE",90.72,"Florida Gators",464000,30000,"SEC"
 "312","Keon Keeley","EDGE /Berkeley PrepTampa, FL","EDGE",99.35,"Alabama Crimson Tide",454000,25000,"SEC"
 "313","Antwaun Powell-Ryland Jr.","EDGE /Indian RiverPortsmouth, VA","EDGE",91.71,"Virginia Tech Hokies",443000,8300,"ACC"
-"314","B.J. Green II","EDGE /Prince Avenue Christian SchoolBogart, GA","EDGE",50,"Recruits",430000,3300,NA
 "315","Kydran Jenkins","EDGE /Jefferson CountyLouisville, GA","EDGE",84.03,"Purdue Boilermakers",397000,0,"Big Ten"
 "316","Adepoju Adebawore","EDGE /North Kansas CityKansas City, MO","EDGE",98.81,"Oklahoma Sooners",378000,10500,"Big 12"
-"317","Tyler Baron","EDGE /Knoxville CatholicKnoxville, TN","EDGE",93.65,"Recruits",364000,32000,NA
 "318","Solomon Byrd","EDGE /William KnightPalmdale, CA","EDGE",77.32,"Usc Trojans",359000,2700,"Pac-12"
 "319","Gabriel Murphy","EDGE /Bishop LynchDallas, TX","EDGE",82.57,"Ucla Bruins",319000,2900,"Pac-12"
 "320","Damon Wilson","EDGE /VeniceVenice, FL","EDGE",97.59,"Georgia Bulldogs",318000,22000,"SEC"
@@ -324,7 +311,6 @@
 "323","Grayson Murphy","EDGE /Bishop LynchDallas, TX","EDGE",82.9,"Ucla Bruins",280000,2400,"Pac-12"
 "324","Shemar Turner","EDGE /DeSotoDeSoto, TX","EDGE",97.94,"Texas A&M Aggies",275000,17200,"SEC"
 "325","Bralen Trice","EDGE /Sandra Day O'connorGlendale, AZ","EDGE",88.4,"Washington Huskies",266000,4600,"Pac-12"
-"326","Andrew Chatfield","EDGE /American HeritageFort Lauderdale, FL","EDGE",91.26,"Recruits",263000,11000,NA
 "327","Chop Robinson","EDGE /Quince OrchardGaithersburg, MD","EDGE",95.55,"Penn State Nittany Lions",242000,23000,"Big Ten"
 "328","Rueben Bain","EDGE /Miami CentralMiami, FL","EDGE",95.7,"Miami Hurricanes",239000,24000,"ACC"
 "329","Adisa Isaac","EDGE /CanarsieBrooklyn, NY","EDGE",93.53,"Penn State Nittany Lions",237000,5100,"Big Ten"
@@ -369,7 +355,6 @@
 "368","Patrick Payton","EDGE /NorthwesternMiami, FL","EDGE",91.52,"Florida State Seminoles",114000,15300,"ACC"
 "369","Collins Acheampong","EDGE /Santa Margarita CatholicRancho Santa Margarita, CA","EDGE",92.94,"Miami Hurricanes",114000,13700,"ACC"
 "370","Elijah Roberts","EDGE /ColumbusMiami, FL","EDGE",89.67,"Smu Mustangs",114000,4400,"American"
-"371","Joe Evans","EDGE /AmesAmes, IA","EDGE",50,"Recruits",113000,3000,NA
 "372","Desmond Umeozulu","EDGE /Charles Herbert FlowersUpper Marlboro, MD","EDGE",93.05,"South Carolina Gamecocks",108000,12300,"SEC"
 "373","Kenyatta Jackson Jr.","EDGE /Chaminade-Madonna PrepHollywood, FL","EDGE",96.3,"Ohio State Buckeyes",107000,12100,"Big Ten"
 "374","Byron Turner Jr.","EDGE /St. AugustineNew Orleans, LA","EDGE",89.33,"Florida State Seminoles",106000,4000,"ACC"
@@ -404,7 +389,6 @@
 "403","Jackson Powers-Johnson","IOL /Corner CanyonDraper, UT","IOL",91.73,"Oregon Ducks",481000,32000,"Pac-12"
 "404","Tyler Booker","IOL /IMG AcademyBradenton, FL","IOL",97.02,"Alabama Crimson Tide",448000,30000,"SEC"
 "405","Zak Zinter","IOL /Buckingham Browne & Nichols SchoolNorth Andover, MA","IOL",90.13,"Michigan Wolverines",441000,41000,"Big Ten"
-"406","Sedrick Van Pran","IOL /Warren EastonNew Orleans, LA","IOL",94.59,"Recruits",384000,23000,NA
 "407","Clay Webb","IOL /OxfordOxford, AL","IOL",97.64,"Jacksonville State Gamecocks",361000,3300,"C-USA"
 "408","Steven Jones","IOL /ChaparralTemecula, CA","IOL",90.77,"Oregon Ducks",330000,6800,"Pac-12"
 "409","Drake Nugent","IOL /Highlands RanchLittleton, CO","IOL",84.3,"Michigan Wolverines",324000,3600,"Big Ten"
@@ -462,7 +446,6 @@
 "461","Enokk Vimahi","IOL /KahukuKahuku, HI","IOL",93.58,"Ohio State Buckeyes",95000,6400,"Big Ten"
 "462","Mason Murphy","IOL /J Serra CatholicSan Juan Capistrano, CA","IOL",88.71,"Usc Trojans",95000,3500,"Pac-12"
 "463","Richie Leonard","IOL /CocoaCocoa, FL","IOL",86.47,"Florida Gators",95000,11200,"SEC"
-"464","Jarrett Kingston","IOL /AndersonAnderson, CA","IOL",79.27,"Recruits",94000,1900,NA
 "465","Jaeden Roberts","IOL /North ShoreHouston, TX","IOL",90.8,"Alabama Crimson Tide",94000,3900,"SEC"
 "466","Kam Dewberry","IOL /AtascocitaHumble, TX","IOL",95.45,"Texas A&M Aggies",94000,20000,"SEC"
 "467","Gino Quinones","IOL /St. LouisHonolulu, HI","IOL",82.83,"Usc Trojans",94000,1500,"Pac-12"
@@ -486,14 +469,12 @@
 "485","Nick Dawkins","IOL /ParklandAllentown, PA","IOL",84.47,"Penn State Nittany Lions",87000,18500,"Big Ten"
 "486","Josh Padilla","IOL /WayneDayton, OH","IOL",91.08,"Ohio State Buckeyes",86000,5500,"Big Ten"
 "487","Gus Zilinskas","IOL /Cherry CreekEnglewood, CO","IOL",80.75,"Rutgers Scarlet Knights",85000,2100,"Big Ten"
-"488","Micah Mazzccua","IOL /St. Frances AcademyBaltimore, MD","IOL",86.4,"Recruits",85000,2400,NA
 "489","Jalen Farmer","IOL /EastsideCovington, GA","IOL",87.28,"Florida Gators",84000,1400,"SEC"
 "490","Xavier Truss","IOL /Bishop HendrickenWarwick, RI","IOL",91.5,"Georgia Bulldogs",84000,11900,"SEC"
 "491","JB Nelson","IOL /Mt. LebanonPittsburgh, PA","IOL",91.73,"Penn State Nittany Lions",83000,3900,"Big Ten"
 "492","Vega Ioane","IOL /Graham-KapowsinGraham, WA","IOL",87.9,"Penn State Nittany Lions",83000,4100,"Big Ten"
 "493","Saleem Wormley","IOL /SmyrnaSmyrna, DE","IOL",89.77,"Penn State Nittany Lions",82000,2300,"Big Ten"
 "494","Hunter Nourzad","IOL /The Walker SchoolMarietta, GA","IOL",50,"Penn State Nittany Lions",82000,1900,"Big Ten"
-"495","Willis Patrick","IOL /MansfieldMansfield, TX","IOL",50,"Recruits",81000,2400,NA
 "496","Mark Nabou","IOL /O'DeaSeattle, WA","IOL",88.53,"Texas A&M Aggies",81000,1900,"SEC"
 "497","Layden Robinson","IOL /ManvelManvel, TX","IOL",88.4,"Texas A&M Aggies",80000,1700,"SEC"
 "498","Jared Wilson","IOL /West ForsythClemmons, NC","IOL",91.06,"Georgia Bulldogs",80000,5000,"SEC"
@@ -506,7 +487,6 @@
 "505","JC Latham","OT /IMG AcademyBradenton, FL","OT",99.37,"Alabama Crimson Tide",616000,21000,"SEC"
 "506","Roger Rosengarten","OT /Valor ChristianLittleton, CO","OT",92.46,"Washington Huskies",568000,4600,"Pac-12"
 "507","Walter Rouse","OT /Sidwell Friends SchoolWashington, DC","OT",88.37,"Oklahoma Sooners",546000,6900,"Big 12"
-"508","Amarius Mims","OT /Bleckley CountyCochran, GA","OT",98.41,"Recruits",528000,44000,NA
 "509","Ajani Cornelius","OT /Archbishop StepinacWhite Plains, NY","OT",50,"Oregon Ducks",512000,5700,"Pac-12"
 "510","Wyatt Milum","OT /Spring ValleyHuntington, WV","OT",92.75,"West Virginia Mountaineers",477000,5900,"Big 12"
 "511","Kadyn Proctor","OT /Southeast PolkDes Moines, IA","OT",98.83,"Alabama Crimson Tide",464000,48000,"SEC"
@@ -517,7 +497,6 @@
 "516","Devonte Gordon","OT /Maret SchoolWashington, DC","OT",84.63,"Wake Forest Demon Deacons",342000,4000,"ACC"
 "517","Francis Mauigoa","OT /IMG AcademyBradenton, FL","OT",98.77,"Miami Hurricanes",322000,23000,"ACC"
 "518","Earnest Greene","OT /St. John BoscoBellflower, CA","OT",96.27,"Georgia Bulldogs",317000,11100,"SEC"
-"519","Valentin Senn","OT /AustriaVolders","OT",50,"Connecticut Huskies",303000,2600,NA
 "520","Bless Harris","OT /St. AugustineNew Orleans, LA","OT",77.94,"Florida State Seminoles",302000,19500,"ACC"
 "521","Samson Okunlola","OT /Thayer AcademyBrockton, MA","OT",97.74,"Miami Hurricanes",298000,34000,"ACC"
 "522","Monroe Mills","OT /Father ToltonColumbia, MO","OT",82.2,"Texas Tech Red Raiders",296000,2500,"Big 12"
@@ -544,7 +523,6 @@
 "543","Gottlieb Ayedze","OT /NorthwestGermantown, MD","OT",50,"Maryland Terrapins",136000,276,"Big Ten"
 "544","Ollie Lane","OT /GibbsCorryton, TN","OT",84.43,"Tennessee Volunteers",132000,9100,"SEC"
 "545","Cayden Green","OT /Lee's Summit NorthLees Summit, MO","OT",94.39,"Oklahoma Sooners",131000,18200,"Big 12"
-"546","Dayne Davis","OT /Sullivan EastBluff City, TN","OT",50,"Recruits",131000,5700,NA
 "547","Andrej Karic","OT /Southlake CarrollSouthlake, TX","OT",90,"Tennessee Volunteers",131000,5200,"SEC"
 "548","Jeremiah Crawford","OT /GoddardGoddard, KS","OT",84.53,"Tennessee Volunteers",131000,5300,"SEC"
 "549","Kingsley Suamataia","OT /OremOrem, UT","OT",97.4,"Byu Cougars",129000,32000,"Big 12"
@@ -579,7 +557,6 @@
 "578","Bryce Benhart","OT /Lakeville NorthLakeville, MN","OT",93.25,"Nebraska Cornhuskers",90000,7600,"Big Ten"
 "579","Reuben Fatheree","OT /FosterRichmond, TX","OT",95.23,"Texas A&M Aggies",89000,6200,"SEC"
 "580","Trey Zuhn","OT /Fossil RidgeFort Collins, CO","OT",90.86,"Texas A&M Aggies",88000,3300,"SEC"
-"581","Jacqui Graham","OT /Jefferson DavisMontgomery, AL","OT",50,"Middle Tennessee State Blue Raiders",87000,892,NA
 "582","Landon Tengwall","OT /Good CounselOlney, MD","OT",95.1,"Penn State Nittany Lions",86000,11900,"Big Ten"
 "583","Drew Shelton","OT /Downingtown WestDowningtown, PA","OT",93.56,"Penn State Nittany Lions",86000,10000,"Big Ten"
 "584","Austin Barber","OT /Trinity Christian AcademyJacksonville, FL","OT",87.47,"Florida Gators",85000,3300,"SEC"
@@ -609,7 +586,6 @@
 "608","Corey Dyches","TE /PotomacOxon Hill, MD","TE",87.17,"Maryland Terrapins",360000,4700,"Big Ten"
 "609","Drake Dabney","TE /Cy RanchCypress, TX","TE",87.1,"Baylor Bears",341000,3600,"Big 12"
 "610","Rivaldo Fairweather","TE /Boyd AndersonFort Lauderdale, FL","TE",81.23,"Auburn Tigers",326000,5200,"SEC"
-"611","Justin Joly","TE /Iona Preparatory SchoolNew Rochelle, NY","TE",77.88,"Connecticut Huskies",321000,6800,NA
 "612","R.J. Maryland","TE /Southlake CarrollSouthlake, TX","TE",89.28,"Smu Mustangs",311000,3200,"American"
 "613","Jared Wiley","TE /TempleTemple, TX","TE",87.1,"Tcu Horned Frogs",303000,10500,"Big 12"
 "614","Amari Niblack","TE /LakewoodClearwater, FL","TE",94.58,"Alabama Crimson Tide",286000,8700,"SEC"
@@ -620,11 +596,9 @@
 "619","Jack Westover","TE /Mount SiSnoqualmie, WA","TE",50,"Washington Huskies",207000,3500,"Pac-12"
 "620","Tyler Warren","TE /AtleeMechanicsville, VA","TE",87.5,"Penn State Nittany Lions",207000,4100,"Big Ten"
 "621","Mitchell Evans","TE /WadsworthWadsworth, OH","TE",88.8,"Notre Dame Fighting Irish",207000,5700,"Independent"
-"622","Jahleel Billingsley","TE /Phillips AcademyChicago, IL","TE",90.33,"Recruits",207000,22000,NA
 "623","Arlis Boardingham","TE /BirminghamVan Nuys, CA","TE",87.88,"Florida Gators",205000,6800,"SEC"
 "624","Oscar Delp","TE /West ForsythCumming, GA","TE",94.87,"Georgia Bulldogs",203000,50000,"SEC"
 "625","Gavin Bartholomew","TE /Blue MountainSchuylkill Haven, PA","TE",82.57,"Pittsburgh Panthers",202000,7000,"ACC"
-"626","Michael Harrison","TE /San Francisco, CA","TE",50,"Recruits",199000,3100,NA
 "627","Gunnar Helm","TE /Cherry CreekEnglewood, CO","TE",86.47,"Texas Longhorns",193000,7500,"Big 12"
 "628","Trey Knox","TE /BlackmanMurfreesboro, TN","TE",91.11,"South Carolina Gamecocks",185000,48000,"SEC"
 "629","Jake Johnson","TE /Oconee CountyBogart, GA","TE",95.1,"Texas A&M Aggies",180000,26000,"SEC"
@@ -636,7 +610,6 @@
 "635","Mason Fairchild","TE /AndaleAndale, KS","TE",79.66,"Kansas Jayhawks",147000,2700,"Big 12"
 "636","McCallan Castles","TE /South TahoeSouth Lake Tahoe, CA","TE",89.67,"Tennessee Volunteers",138000,4900,"SEC"
 "637","Ben Yurosek","TE /Bakersfield ChristianBakersfield, CA","TE",88.43,"Stanford Cardinal",137000,2700,"Pac-12"
-"638","Jalin Conyers","TE /GruverGruver, TX","TE",92.12,"Recruits",132000,15400,NA
 "639","Tyler Fromm","TE /Warner RobinsWarner Robins, GA","TE",89.83,"Auburn Tigers",124000,39000,"SEC"
 "640","Jelani Thurman","TE /Langston HughesFairburn, GA","TE",93.66,"Ohio State Buckeyes",122000,4800,"Big Ten"
 "641","Lawson Luckie","TE /NorcrossNorcross, GA","TE",93.27,"Georgia Bulldogs",121000,10100,"SEC"
@@ -656,7 +629,6 @@
 "655","Robbie Ouzts","TE /Rock HillRock Hill, SC","TE",87.4,"Alabama Crimson Tide",102000,3400,"SEC"
 "656","Max Wright","TE /TaylorKaty, TX","TE",92.56,"Texas A&M Aggies",102000,13500,"SEC"
 "657","Jude Wolfe","TE /St. John BoscoBellflower, CA","TE",91.49,"Usc Trojans",101000,6100,"Pac-12"
-"658","Dante Zanders","TE /Boca RatonBoca Raton, FL","TE",87.4,"Recruits",100000,7100,NA
 "659","Luke Hasz","TE /BixbyBixby, OK","TE",91.93,"Arkansas Razorbacks",100000,23000,"SEC"
 "660","Nate Boerkircher","TE /AuroraAurora, NE","TE",50,"Nebraska Cornhuskers",95000,3400,"Big Ten"
 "661","Grayson Barnes","TE /RocklinSacramento, CA","TE",83.48,"Northern Illinois Huskies",92000,714,"MAC"
@@ -677,14 +649,11 @@
 "676","Patrick Herbert","TE /SheldonEugene, OR","TE",91.47,"Oregon Ducks",67000,20000,"Pac-12"
 "677","Marlin Klein","TE /Rabun Gap-Nacoochee SchoolRabun Gap, GA","TE",88.55,"Michigan Wolverines",66000,7500,"Big Ten"
 "678","Blake Bosma","TE /West Ottawa HSHolland, MI","TE",50,"Western Michigan Broncos",65000,470,"MAC"
-"679","Maurice Brown II","TE /Charles Herbert FlowersUpper Marlboro, MD","TE",50,"Recruits",65000,13300,NA
 "680","Cam McCormick","TE /SummitBend, OR","TE",88.03,"Miami Hurricanes",65000,9700,"ACC"
 "681","Matthew Hibner","TE /Lake BraddockBurke, VA","TE",88.12,"Michigan Wolverines",64000,5300,"Big Ten"
 "682","Elijah Arroyo","TE /IndependenceFrisco, TX","TE",92.5,"Miami Hurricanes",64000,8800,"ACC"
-"683","Carsten Groos","TE /AndersonAustin, TX","TE",50,"Recruits",64000,4200,NA
 "684","Josh Beetham","TE /YorkvilleYorkville, IL","TE",50,"Illinois Fighting Illini",62000,2400,"Big Ten"
 "685","AJ Barner","TE /AuroraAurora, OH","TE",83.23,"Michigan Wolverines",62000,7100,"Big Ten"
-"686","Noah Howes","TE /RochesterRochester, MI","TE",50,"Recruits",62000,1400,NA
 "687","Josh Sapp","TE /GreenvilleGreenville, SC","TE",83.13,"Clemson Tigers",61000,14500,"ACC"
 "688","Brenden Bates","TE /Archbishop MoellerCincinnati, OH","TE",87.7,"Kentucky Wildcats",61000,85000,"SEC"
 "689","Sean Brown","TE /CoosaRome, GA","TE",85.9,"Tennessee Volunteers",61000,4000,"SEC"
@@ -705,14 +674,9 @@
 "704","Malik Washington","WR /ParkviewLilburn, GA","WR",85.6,"Virginia Cavaliers",521000,2700,"ACC"
 "705","AD Mitchell","WR /Cane RidgeAntioch, TN","WR",90.39,"Texas Longhorns",501000,54000,"Big 12"
 "706","Brenden Rice","WR /HamiltonChandler, AZ","WR",88.82,"Usc Trojans",481000,197000,"Pac-12"
-"707","Kris Mitchell","WR /MandarinJacksonville, FL","WR",81.5,"Fiu Golden Panthers",468000,660000,NA
 "708","Tre Harris","WR /ComeauxLafayette, LA","WR",80.08,"Ole Miss Rebels",458000,3400,"SEC"
-"709","Johnny Wilson","WR /CalabasasCalabasas, CA","WR",90.28,"Recruits",452000,52000,NA
-"710","Ricky Pearsall","WR /Corona Del SolTempe, AZ","WR",83.1,"Recruits",442000,61000,NA
-"711","Tahj Washington","WR /MarshallMarshall, TX","WR",81.08,"Recruits",398000,16300,NA
 "712","Caullin Lacy","WR /Faith AcademyMobile, AL","WR",80.96,"South Alabama Jaguars",397000,108,"Sun Belt"
 "713","Nyck Harbor","WR /Archbishop CarrollWashington, DC","WR",97.53,"South Carolina Gamecocks",397000,90000,"SEC"
-"714","Ja'Lynn Polk","WR /LufkinLufkin, TX","WR",88.4,"Recruits",386000,3300,NA
 "715","Emeka Egbuka","WR /SteilacoomSteilacoom, WA","WR",97.86,"Ohio State Buckeyes",381000,107000,"Big Ten"
 "716","Duce Robinson","WR /PinnaclePhoenix, AZ","WR",97.48,"Usc Trojans",369000,18000,"Pac-12"
 "717","Johntay Cook II","WR /DeSotoDeSoto, TX","WR",97.23,"Texas Longhorns",365000,232000,"Big 12"
@@ -734,7 +698,6 @@
 "733","Xavier Weaver","WR /Orlando Christian PrepOrlando, FL","WR",80.48,"Colorado Buffaloes",205000,4900,"Pac-12"
 "734","DeAndre Moore Jr.","WR /St. John BoscoLos Alamitos, CA","WR",93.9,"Texas Longhorns",198000,23000,"Big 12"
 "735","Casey Cain","WR /Warren EastonNew Orleans, LA","WR",85.3,"Texas Longhorns",197000,57000,"Big 12"
-"736","Isaiah Neyor","WR /LamarArlington, TX","WR",77.55,"Recruits",197000,12800,NA
 "737","Kobe Hudson","WR /Troup CountyLagrange, GA","WR",93.79,"Ucf Knights",189000,19600,"Big 12"
 "738","Isaiah Williams","WR /Trinity CatholicSaint Louis, MO","WR",93.61,"Illinois Fighting Illini",187000,9200,"Big Ten"
 "739","Julian Fleming","WR /Southern ColumbiaCatawissa, PA","WR",99.35,"Ohio State Buckeyes",183000,116000,"Big Ten"
@@ -747,10 +710,8 @@
 "746","Tez Johnson","WR /Pinson ValleyPinson, AL","WR",83.2,"Oregon Ducks",162000,1700,"Pac-12"
 "747","Ryan Niblett","WR /Aldine EisenhowerHouston, TX","WR",95.43,"Texas Longhorns",160000,5600,"Big 12"
 "748","Elic Ayomanor","WR /Deerfield AcademyDeerfield, MA","WR",85.3,"Stanford Cardinal",160000,4200,"Pac-12"
-"749","A.J. Henning","WR /Lincoln-Way EastFrankfort, IL","WR",94.09,"Recruits",159000,566000,NA
 "750","Malachi Coleman","WR /Lincoln EastLincoln, NE","WR",95.65,"Nebraska Cornhuskers",157000,29000,"Big Ten"
 "751","Tetairoa McMillan","WR /ServiteAnaheim, CA","WR",96.45,"Arizona Wildcats",156000,26000,"Pac-12"
-"752","Mario Williams","WR /Plant CityPlant City, FL","WR",96.72,"Recruits",154000,86000,NA
 "753","Jalen Brown","WR /Gulliver PrepMiami, FL","WR",94.82,"Lsu Tigers",152000,25000,"SEC"
 "754","KeAndre Lambert-Smith","WR /MauryNorfolk, VA","WR",91.85,"Penn State Nittany Lions",151000,286000,"Big Ten"
 "755","Ramel Keyton","WR /MariettaMarietta, GA","WR",94.29,"Tennessee Volunteers",148000,23000,"SEC"
@@ -775,13 +736,11 @@
 "774","Mycah Pittman","WR /CalabasasCalabasas, CA","WR",94.2,"Utah Utes",127000,307000,"Pac-12"
 "775","Braylon James","WR /Stony PointRound Rock, TX","WR",93.36,"Notre Dame Fighting Irish",124000,23000,"Independent"
 "776","Jayden Ballard","WR /WashingtonMassillon, OH","WR",94.68,"Ohio State Buckeyes",124000,64000,"Big Ten"
-"777","Xavier Johnson","WR /Summit Country Day SchoolCincinnati, OH","WR",85.55,"Recruits",122000,28000,NA
 "778","Kendrick Law","WR /Captain ShreveShreveport, LA","WR",94.56,"Alabama Crimson Tide",120000,26000,"SEC"
 "779","Eugene Wilson III","WR /GaitherTampa, FL","WR",94.07,"Florida Gators",120000,12700,"SEC"
 "780","Chris Culliver","WR /MaidenMaiden, NC","WR",93.51,"North Carolina Tar Heels",119000,16400,"ACC"
 "781","Anthony Evans","WR /JudsonConverse, TX","WR",92.16,"Georgia Bulldogs",119000,25000,"SEC"
 "782","Jaden Greathouse","WR /WestlakeAustin, TX","WR",92.84,"Notre Dame Fighting Irish",119000,29000,"Independent"
-"783","Winston Wright","WR /Memorial Day SchoolSavannah, GA","WR",85.6,"Recruits",118000,21000,NA
 "784","Destyn Hill","WR /Edna KarrNew Orleans, LA","WR",93.85,"Florida State Seminoles",114000,16000,"ACC"
 "785","Ja'Khi Douglas","WR /TerrebonneHouma, LA","WR",90.1,"Florida State Seminoles",114000,15300,"ACC"
 "786","Cristian Driver","WR /Liberty ChristianFlower Mound, TX","WR",90.2,"Penn State Nittany Lions",114000,118000,"Big Ten"
@@ -806,7 +765,6 @@
 "805","Braelon Allen","RB /Fond Du LacFond Du Lac, WI","RB",92.78,"Wisconsin Badgers",414000,137000,"Big Ten"
 "806","Jaydn Ott","RB /NorcoNorco, CA","RB",89.97,"California Golden Bears",391000,18800,"Pac-12"
 "807","Ashton Jeanty","RB /Lone StarFrisco, TX","RB",85.51,"Boise State Broncos",374000,1900,"Mountain West"
-"808","Cody Schrader","RB /Lutheran SouthSaint Louis, MO","RB",50,"Recruits",372000,5600,NA
 "809","Trey Benson","RB /St JosephGreenville, MS","RB",89.37,"Florida State Seminoles",370000,69000,"ACC"
 "810","Ray Davis","RB /Blair AcademyBlairstown, NJ","RB",81.05,"Kentucky Wildcats",356000,12700,"SEC"
 "811","Justice Haynes","RB /BufordRoswell, GA","RB",97.14,"Alabama Crimson Tide",351000,67000,"SEC"
@@ -861,8 +819,6 @@
 "860","Trey Holly","RB /Union ParishFarmerville, LA","RB",91.06,"Lsu Tigers",97000,26000,"SEC"
 "861","Dakereon Joyner","RB /Fort DorchesterNorth Charleston, SC","RB",91.11,"South Carolina Gamecocks",97000,66000,"SEC"
 "862","Josh Williams","RB /The Kinkaid SchoolHouston, TX","RB",77.27,"Lsu Tigers",95000,25000,"SEC"
-"863","Sevaughn Clark","RB /Dawson CountyDawsonville, GA","RB",50,"Recruits",90000,388000,NA
-"864","Nate Noel","RB /NorthwesternMiami, FL","RB",50,"Recruits",89000,2100,NA
 "865","Ulysses Bentley","RB /C.E. KingHouston, TX","RB",82.1,"Ole Miss Rebels",88000,12200,"SEC"
 "866","Treyaun Webb","RB /Trinity Christian AcademyJacksonville, FL","RB",89.76,"Florida Gators",88000,32000,"SEC"
 "867","Le'Veon Moss","RB /Istrouma SeniorBaton Rouge, LA","RB",94.77,"Texas A&M Aggies",84000,3200,"SEC"
@@ -874,13 +830,11 @@
 "873","Jovantae Barnes","RB /Desert PinesLas Vegas, NV","RB",94.01,"Oklahoma Sooners",72000,12800,"Big 12"
 "874","Marcus Major","RB /MillwoodOklahoma City, OK","RB",90.12,"Oklahoma Sooners",71000,10700,"Big 12"
 "875","CJ Stokes","RB /Hammond SchoolColumbia, SC","RB",86.2,"Michigan Wolverines",70000,15000,"Big Ten"
-"876","Don Chaney Jr.","RB /Belen Jesuit PrepMiami, FL","RB",93.15,"Recruits",70000,17500,NA
 "877","Ramon Jefferson","RB /Harry S TrumanBronx, NY","RB",50,"Kentucky Wildcats",69000,30000,"SEC"
 "878","Henry Parrish","RB /ColumbusMiami, FL","RB",90.69,"Miami Hurricanes",69000,14100,"ACC"
 "879","Kavosiey Smoke","RB /WetumpkaWetumpka, AL","RB",86.53,"Colorado Buffaloes",69000,39000,"Pac-12"
 "880","Dylan Sampson","RB /DutchtownGeismar, LA","RB",89.05,"Tennessee Volunteers",68000,8500,"SEC"
 "881","Jayden Limar","RB /Lake StevensLake Stevens, WA","RB",90.5,"Oregon Ducks",67000,9600,"Pac-12"
-"882","Jaden Knowles","RB /KennedaleKennedale, TX","RB",50,"Recruits",67000,22000,NA
 "883","Pierce Hudgens","RB /Flower MoundFlower Mound, TX","RB",50,"Oklahoma Sooners",66000,3100,"Big 12"
 "884","Isaiah Augustave","RB /NaplesNaples, FL","RB",90.45,"Arkansas Razorbacks",66000,2800,"SEC"
 "885","Bentavious Thompson","RB /Miami SouthridgeMiami, FL","RB",86.87,"Oklahoma Sooners",65000,4500,"Big 12"
@@ -913,12 +867,10 @@
 "912","Dante Moore","QB /Martin Luther KingDetroit, MI","QB",99.22,"Ucla Bruins",832000,68000,"Pac-12"
 "913","Brady Cook","QB /Chaminade College PrepSaint Louis, MO","QB",86.5,"Missouri Tigers",793000,29000,"SEC"
 "914","Jackson Arnold","QB /GuyerDenton, TX","QB",98.94,"Oklahoma Sooners",748000,58000,"Big 12"
-"915","Graham Mertz","QB /Blue Valley NorthMission, KS","QB",95.33,"Recruits",687000,101000,NA
 "916","Drew Allar","QB /MedinaMedina, OH","QB",97.15,"Penn State Nittany Lions",649000,110000,"Big Ten"
 "917","Cameron Ward","QB /ColumbiaWest Columbia, TX","QB",50,"Washington State Cougars",629000,119000,"Pac-12"
 "918","Taulia Tagovailoa","QB /ThompsonAlabaster, AL","QB",91.89,"Maryland Terrapins",590000,154000,"Big Ten"
 "919","Joe Milton","QB /OlympiaOrlando, FL","QB",90.9,"Tennessee Volunteers",590000,125000,"SEC"
-"920","Will Howard","QB /Downingtown WestDowningtown, PA","QB",84.47,"Recruits",536000,26000,NA
 "921","Joey Aguilar","QB /FreedomOakley, CA","QB",87.04,"Appalachian State Mountaineers",498000,1200,"Sun Belt"
 "922","Michael Pratt","QB /Deerfield BeachDeerfield Beach, FL","QB",83.37,"Tulane Green Wave",465000,17400,"American"
 "923","Jack Plummer","QB /GilbertGilbert, AZ","QB",87.5,"Louisville Cardinals",451000,7500,"ACC"
@@ -930,14 +882,11 @@
 "929","Cade Klubnik","QB /WestlakeAustin, TX","QB",97.56,"Clemson Tigers",361000,118000,"ACC"
 "930","Noah Fifita","QB /ServiteAnaheim, CA","QB",87.85,"Arizona Wildcats",353000,10000,"Pac-12"
 "931","Christopher Vizzina","QB /Briarwood ChristianBirmingham, AL","QB",94.59,"Clemson Tigers",353000,30000,"ACC"
-"932","Austin Reed","QB /St. AugustineSaint Augustine, FL","QB",50,"Recruits",351000,11500,NA
 "933","Kaidon Salter","QB /Cedar HillCedar Hill, TX","QB",92.8,"Tennessee Volunteers",333000,20000,"SEC"
 "934","Conner Weigman","QB /BridgelandCypress, TX","QB",97.08,"Texas A&M Aggies",328000,43000,"SEC"
 "935","Avery Johnson","QB /MaizeMaize, KS","QB",94.11,"Kansas State Wildcats",314000,81000,"Big 12"
 "936","Haynes King","QB /LongviewLongview, TX","QB",93.13,"Georgia Tech Yellow Jackets",307000,26000,"ACC"
-"937","Tyler Van Dyke","QB /Suffield AcademyGlastonbury, CT","QB",90.58,"Recruits",300000,31000,NA
 "938","Jalon Daniels","QB /LawndaleLawndale, CA","QB",79.82,"Kansas Jayhawks",281000,98000,"Big 12"
-"939","Jordan McCloud","QB /PlantTampa, FL","QB",80.75,"Recruits",268000,21000,NA
 "940","Austin Novosad","QB /Dripping SpringsDripping Springs, TX","QB",93.8,"Oregon Ducks",257000,15000,"Pac-12"
 "941","TJ Finley","QB /PonchatoulaPonchatoula, LA","QB",88.67,"Texas State Bobcats",253000,71000,"Sun Belt"
 "942","Riley Leonard","QB /FairhopeFairhope, AL","QB",87.6,"Duke Blue Devils",247000,22000,"ACC"
@@ -954,13 +903,11 @@
 "953","Brock Vandagriff","QB /Prince Avenue Christian SchoolBogart, GA","QB",97.23,"Georgia Bulldogs",152000,62000,"SEC"
 "954","Robby Ashford","QB /HooverHoover, AL","QB",89.95,"Auburn Tigers",148000,56000,"SEC"
 "955","Ty Simpson","QB /WestviewMartin, TN","QB",97.24,"Alabama Crimson Tide",144000,41000,"SEC"
-"956","Casey Thompson","QB /NewcastleNewcastle, OK","QB",90.01,"Recruits",141000,123000,NA
 "957","Cade McNamara","QB /Damonte RanchReno, NV","QB",90.44,"Iowa Hawkeyes",139000,113000,"Big Ten"
 "958","Payton Thorne","QB /Naperville CentralNaperville, IL","QB",83.53,"Auburn Tigers",139000,39000,"SEC"
 "959","Jeff Sims","QB /SandalwoodJacksonville, FL","QB",90.6,"Nebraska Cornhuskers",135000,40000,"Big Ten"
 "960","Devin Brown","QB /Corner CanyonDraper, UT","QB",97,"Ohio State Buckeyes",133000,27000,"Big Ten"
 "961","Kenny Minchey","QB /Pope John Paul IIHendersonville, TN","QB",92.56,"Notre Dame Fighting Irish",131000,6900,"Independent"
-"962","Max Johnson","QB /Prince Avenue Christian SchoolWatkinsville, GA","QB",90.19,"Recruits",130000,37000,NA
 "963","Alex Orji","QB /SachseSachse, TX","QB",89.08,"Michigan Wolverines",124000,96000,"Big Ten"
 "964","Lincoln Kienholz","QB /T.F. RiggsPierre, SD","QB",91.99,"Ohio State Buckeyes",123000,8200,"Big Ten"
 "965","John Rhys Plumlee","QB /Oak GroveHattiesburg, MS","QB",89.76,"Ucf Knights",122000,162000,"Big 12"
@@ -988,5 +935,4 @@
 "987","Luke Doty","QB /Myrtle Beach Myrtle Beach, SC","QB",94.47,"South Carolina Gamecocks",85000,28000,"SEC"
 "988","Jacurri Brown","QB /LowndesValdosta, GA","QB",90.04,"Miami Hurricanes",84000,25000,"ACC"
 "989","Walker Howard","QB /St. Thomas MoreLafayette, LA","QB",96.3,"Ole Miss Rebels",83000,39000,"SEC"
-"990","Will Rogers","QB /BrandonBrandon, MS","QB",87.1,"Recruits",83000,62000,NA
 "991","Davis Beville","QB /GreenvilleGreenville, SC","QB",87.47,"Oklahoma Sooners",82000,13300,"Big 12"
