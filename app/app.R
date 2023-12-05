@@ -18,6 +18,7 @@ library(DT)
 library(ggrepel)
 library(leaflet)
 library(htmltools)
+library(htmlwidgets)
 
 
 # Read all data:
@@ -292,6 +293,7 @@ server <- function(input, output, session){
   })
   
   output$table <- DT::renderDataTable({ 
+    
     data_for_table()
   })
   

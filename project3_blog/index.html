@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your team member names here">
+<meta name="author" content="Money Makers: Tucker, Naaveen, Wolfie">
+<meta name="dcterms.date" content="2023-12-13">
 
-<title>Your Project Title Here</title>
+<title>Statistics Behind N.I.L.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,12 +99,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a>
-  <ul class="collapse">
-  <li><a href="#website-publication-work-flow" id="toc-website-publication-work-flow" class="nav-link" data-scroll-target="#website-publication-work-flow">Website publication work flow</a></li>
-  <li><a href="#website-publication-work-flow-1" id="toc-website-publication-work-flow-1" class="nav-link" data-scroll-target="#website-publication-work-flow-1">Website publication work flow</a></li>
-  </ul></li>
-  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#table-athletes" id="toc-table-athletes" class="nav-link" data-scroll-target="#table-athletes">Table: Athletes</a></li>
+  <li><a href="#scatterplot-followers-vs.-valuation" id="toc-scatterplot-followers-vs.-valuation" class="nav-link" data-scroll-target="#scatterplot-followers-vs.-valuation">Scatterplot: Followers vs.&nbsp;Valuation</a></li>
+  <li><a href="#scatterplot-valuation-vs.-winloss" id="toc-scatterplot-valuation-vs.-winloss" class="nav-link" data-scroll-target="#scatterplot-valuation-vs.-winloss">Scatterplot: Valuation vs.&nbsp;Win/Loss</a></li>
+  <li><a href="#map-follow-the-money" id="toc-map-follow-the-money" class="nav-link" data-scroll-target="#map-follow-the-money">Map: Follow The Money</a></li>
+  <li><a href="#map-will-my-athlete-transfer" id="toc-map-will-my-athlete-transfer" class="nav-link" data-scroll-target="#map-will-my-athlete-transfer">Map: Will My Athlete Transfer?</a>
   <ul class="collapse">
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">Visualizations</a></li>
@@ -138,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Your Project Title Here</h1>
+<h1 class="title">Statistics Behind N.I.L.</h1>
 </div>
 
 
@@ -148,14 +149,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your team member names here </p>
+             <p>Money Makers: Tucker, Naaveen, Wolfie </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">December 13, 2023</p>
     </div>
   </div>
   
@@ -171,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../img/Statslogo.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="res/Statslogo.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption class="figure-caption">Team Money Makers Logo</figcaption>
 </figure>
 </div>
@@ -184,38 +185,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p><a href="https://www.on3.com/nil/rankings/player/college/football/">NIL Data</a></p></li>
 <li><p><a href="%22https://www.teamrankings.com/ncf/trends/win_trends/?range=yearly_2023&amp;group=0%22">Win Percentage Data</a></p></li>
-</ol>
-<section id="website-publication-work-flow" class="level2">
-<h2 class="anchored" data-anchor-id="website-publication-work-flow">Website publication work flow</h2>
-<ol type="1">
-<li><p>Edit Rmd</p></li>
-<li><p>Knit to HTML to view progress. You may need to click “Open in Browser” for some content to show (sometimes content won’t show until you actually push your changes to GitHub and view the published website).</p></li>
-<li><p>Commit and push changes when you are ready. The website may take a couple minutes to update automatically after the push, but you may need to clear your browser’s cache or view the page in a private/incognito window to see the changes more quickly.</p></li>
+<li><p><a href="%22https://www.on3.com/transfer-portal/industry/football/2023/%22">Transfer Portal Data</a></p></li>
+<li><p><a href="%22https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs%22">School Conferences</a></p></li>
 </ol>
 </section>
-<section id="website-publication-work-flow-1" class="level2">
-<h2 class="anchored" data-anchor-id="website-publication-work-flow-1">Website publication work flow</h2>
-<ol type="1">
-<li><p>Edit qmd</p></li>
-<li><p>Knit to HTML to view progress. You may need to click “Open in Browser” for some content to show (sometimes content won’t show until you actually push your changes to GitHub and view the published website).</p></li>
-<li><p>Commit and push changes when you are ready. The website may take a couple minutes to update automatically after the push, but you may need to clear your browser’s cache or view the page in a private/incognito window to see the changes more quickly.</p></li>
-</ol>
-</section>
-</section>
-<section id="content" class="level1">
-<h1>Content</h1>
-<p>You can include text, <code>code</code>, and output as usual. Remember to take full advantage of Markdown and its <a href="https://www.markdownguide.org/basic-syntax/">syntax shortcuts</a>.</p>
-<div class="cell" data-layout-align="left">
+<section id="table-athletes" class="level1">
+<h1>Table: Athletes</h1>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/ggplot-example-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="res/interactive_table.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Interactive Table Example</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Examples and additional guidance are provided below.</p>
-<p>Take note of the the default code chunk options in the <code>setup</code> code chunk. For example, unlike the rest of the qmd files we worked in this semester, the default code chunk option is <code>echo = FALSE</code>, so you will need to set <code>echo  = TRUE</code> for any code chunks you would like to display in the blog. You should be thoughtful and intentional about the code you choose to display.</p>
+<p>WRITE DESCRIPTION</p>
+</section>
+<section id="scatterplot-followers-vs.-valuation" class="level1">
+<h1>Scatterplot: Followers vs.&nbsp;Valuation</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="res/followers_valuation.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Interactive Scatterplot Example</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>WRITE DESCRIPTION</p>
+</section>
+<section id="scatterplot-valuation-vs.-winloss" class="level1">
+<h1>Scatterplot: Valuation vs.&nbsp;Win/Loss</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="res/valuation_wl.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Interactive Scatterplot Example</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>WRITE DESCRIPTION</p>
+</section>
+<section id="map-follow-the-money" class="level1">
+<h1>Map: Follow The Money</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="res/follow_the_money.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Leafly Network Science / Mapping Example</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>WRITE DESCRIPTION</p>
+</section>
+<section id="map-will-my-athlete-transfer" class="level1">
+<h1>Map: Will My Athlete Transfer?</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="res/transfer_prediction.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Logistic Regression Predictor</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>WRITE DESCRIPTION</p>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
 <p>You can include <a href="https://www.datadreaming.org/post/r-markdown-theme-gallery/">links</a> using Markdown syntax as shown.</p>
@@ -236,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You may embed a published Shiny app in your blog if useful, but be aware that there is a limited window size for embedded objects, which tends to makes the user experience of the app worse relative to a dedicated Shiny app page. Additionally, Shiny apps will go idle after a few minutes and have to be reloaded by the user, which may also affect the user experience.</p>
 <p>Any Shiny apps embedded in your blog should be accompanied by the link to the published Shiny app (I did this using a figure caption in the code chunk below, but you don’t have to incorporate the link in this way).</p>
 <div class="cell">
-<iframe src="https://bebailey.shinyapps.io/data-science-salaries?showcase=0" width="100%" height="500px" data-external="1">
+<iframe src="https://tbarach26.shinyapps.io/MoneyMakers/?showcase=0" width="100%" height="900px" data-external="1">
 </iframe>
 </div>
 </section>
@@ -255,8 +297,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>, <span class="at">autoWidth =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d732a42241ddb58047f1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d732a42241ddb58047f1">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"10.4\" data-max=\"33.9\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"4\" data-max=\"8\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"52\" data-max=\"335\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>MPG<\/th>\n      <th>Number of cylinders<\/th>\n      <th>Horsepower<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e7343bf9a70b8dbd04e7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e7343bf9a70b8dbd04e7">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"10.4\" data-max=\"33.9\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"4\" data-max=\"8\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"52\" data-max=\"335\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>MPG<\/th>\n      <th>Number of cylinders<\/th>\n      <th>Horsepower<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -400,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>

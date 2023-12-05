@@ -1,7 +1,7 @@
 ---
-title: "Your Project Title Here"
-author: "Your team member names here"
-date: "Add a date"
+title: "Statistics Behind N.I.L."
+author: "Money Makers: Tucker, Naaveen, Wolfie"
+date: "December 13, 2023"
 format:
   html:
     theme: minty
@@ -21,13 +21,15 @@ options(knitr.kable.NA = '')
 
 # Load packages
 library(tidyverse)
+library(htmlwidgets)
+library(htmltools)
 
 ```
 
 # Intro
 
 ```{r, fig.cap="Team Money Makers Logo", out.width="80%", fig.align="center"}
-knitr::include_graphics("../img/Statslogo.png")
+knitr::include_graphics("res/Statslogo.png")
 ```
 
 What is N.I.L.?
@@ -45,45 +47,81 @@ Where Did We Collect Our Data?
 
 2. [Win Percentage Data]("https://www.teamrankings.com/ncf/trends/win_trends/?range=yearly_2023&group=0")
 
-## Website publication work flow
+3. [Transfer Portal Data]("https://www.on3.com/transfer-portal/industry/football/2023/")
 
-1. Edit Rmd
-
-2. Knit to HTML to view progress. You may need to click "Open in Browser" for some content to show (sometimes content won't show until you actually push your changes to GitHub and view the published website).
-
-3. Commit and push changes when you are ready. The website may take a couple minutes to update automatically after the push, but you may need to clear your browser's cache or view the page in a private/incognito window to see the changes more quickly. 
+4. [School Conferences]("https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs")
 
 
-## Website publication work flow
+```{r include=FALSE}
+# Read all data:
+athlete_data <- read.csv("data/athlete_nil_data.csv")
+combined_data <- read.csv("data/combined_nil_data.csv")
+map_data <- read.csv("data/nil_map_data.csv")
+nil_transfer_data <- read.csv("data/athlete_transfer_nil_data.csv")
+predictor_data <- read.csv("data/predictor_data.csv")
 
-1. Edit qmd
 
-2. Knit to HTML to view progress. You may need to click "Open in Browser" for some content to show (sometimes content won't show until you actually push your changes to GitHub and view the published website).
+# Gets all unique colleges and positions into a list:
+college_choices <- as.list(unique(athlete_data$College))
+position_choices <- as.list(unique(athlete_data$Position))
+last_team_choices <<- as.list(map_data$Last.Team)
+new_team_choices <<- as.list(map_data$New.Team)
+conference_choices <- as.list(unique(predictor_data$NewConf))
 
-3. Commit and push changes when you are ready. The website may take a couple minutes to update automatically after the push, but you may need to clear your browser's cache or view the page in a private/incognito window to see the changes more quickly. 
+# Converts variable names into display names:
+axis_choices <- as.list(c("total_nil_valuation", "avg_valuation"))
+axis_labels <- as.list(c("Total NIL Valuation ($)",
+                         "Average NIL Valuation ($)"))
+names(axis_choices) <- axis_labels
+
+# Options for Raido Buttons
+on_off <- as.list(c("Select All", "Deselect All"))
 
 
-# Content
-
-You can include text, `code`, and output as usual. Remember to take full advantage of Markdown and its [syntax shortcuts](https://www.markdownguide.org/basic-syntax/).
-
-```{r}
-#| label: ggplot-example
-#| fig.align: left
-#| out.width: 100%
-
-ggplot(data = cars, aes(x = speed, y = dist)) + 
-  geom_point() + 
-  labs(x = "Speed of car (mph)",
-       y = "Distance taken to stop (ft)",
-       title = "Stopping distance increases with faster speeds",
-       subtitle = "Based on 1920s study") +
-  theme_classic()
+predictor_model <- glm(binomialRep ~ NIL.Valuation + Followers + Rating + Position + NewConf, data = predictor_data, family = binomial)
 ```
 
-Examples and additional guidance are provided below. 
 
-Take note of the the default code chunk options in the `setup` code chunk. For example, unlike the rest of the qmd files we worked in this semester, the default code chunk option is `echo = FALSE`, so you will need to set `echo  = TRUE` for any code chunks you would like to display in the blog. You should be thoughtful and intentional about the code you choose to display. 
+# Table: Athletes
+
+```{r, fig.cap="Interactive Table Example", out.width="80%", fig.align="center"}
+knitr::include_graphics("res/interactive_table.png")
+```
+
+WRITE DESCRIPTION
+
+# Scatterplot: Followers vs. Valuation
+
+```{r, fig.cap="Interactive Scatterplot Example", out.width="80%", fig.align="center"}
+knitr::include_graphics("res/followers_valuation.png")
+```
+
+WRITE DESCRIPTION
+
+# Scatterplot: Valuation vs. Win/Loss
+
+```{r, fig.cap="Interactive Scatterplot Example", out.width="80%", fig.align="center"}
+knitr::include_graphics("res/valuation_wl.png")
+```
+
+WRITE DESCRIPTION
+
+# Map: Follow The Money
+
+```{r, fig.cap="Leafly Network Science / Mapping Example", out.width="80%", fig.align="center"}
+knitr::include_graphics("res/follow_the_money.png")
+```
+
+WRITE DESCRIPTION
+
+# Map: Will My Athlete Transfer?
+
+```{r, fig.cap="Logistic Regression Predictor", out.width="80%", fig.align="center"}
+knitr::include_graphics("res/transfer_prediction.png")
+```
+
+WRITE DESCRIPTION
+
 
 
 ## Links 
@@ -114,8 +152,8 @@ Any Shiny apps embedded in your blog should be accompanied by the link to the pu
 #| label: ds-salaries-app
 #| out.width: "100%"
 
-knitr::include_app("https://bebailey.shinyapps.io/data-science-salaries",
-                   height = "500px")
+knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
+                   height = "900px")
 ```
 
 
