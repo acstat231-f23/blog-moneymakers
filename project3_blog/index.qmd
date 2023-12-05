@@ -26,7 +26,33 @@ library(tidyverse)
 
 # Intro
 
-This is a Quarto blog template. This document will be knit to HTML to produce a webpage that will be hosted publicly via GitHub.
+```{r, fig.cap="Team Money Makers Logo", out.width="80%", fig.align="center"}
+knitr::include_graphics("../img/Statslogo.png")
+```
+
+What is N.I.L.?
+N.I.L., stands for Name Image and Likeness which started on July 1, 2021, and allows college athletes to monetize themselves using their status and influence.
+
+What is Our Objective?
+We summed up the NIL valuation of each football program to see how the school’s sponsors’ and fanbases’ investment in acquiring their best high school/transfer talent pays off in terms of the team’s win percentage before and after July 1, 2021.
+    
+App Purpose
+The first tab displays a table where the user can be introduced to the data. They can sort by team and position and view as much or as little data as they would like for easy digestion. The second tab display is a scatterplot where the user can see a main reason for why these football athletes are worth a lot: their social media following. The final tab is another scatterplot that answers our objective: comparing NIL Valuation for D1 College Football teams with their change in win percentage since NIL began.
+    
+Where Did We Collect Our Data?
+
+1. [NIL Data](https://www.on3.com/nil/rankings/player/college/football/)
+
+2. [Win Percentage Data]("https://www.teamrankings.com/ncf/trends/win_trends/?range=yearly_2023&group=0")
+
+## Website publication work flow
+
+1. Edit Rmd
+
+2. Knit to HTML to view progress. You may need to click "Open in Browser" for some content to show (sometimes content won't show until you actually push your changes to GitHub and view the published website).
+
+3. Commit and push changes when you are ready. The website may take a couple minutes to update automatically after the push, but you may need to clear your browser's cache or view the page in a private/incognito window to see the changes more quickly. 
+
 
 ## Website publication work flow
 
