@@ -159,42 +159,6 @@ knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
 
 ## Tables
 
-### **DT** package
-
-The [**DT** package](https://rstudio.github.io/DT/) is great for making dynamic tables that can be displayed, searched, and filtered by the user without needing an R server or Shiny app!
-
-Note: you should load any packages you use in the `setup` code chunk as usual. The `library()` functions are shown below just for demonstration.
-
-```{r}
-#| label: dt-example
-#| message: false
-#| echo: true
-
-library(DT)
-mtcars |>
-  select(mpg, cyl, hp) |>
-  datatable(colnames = c("MPG", "Number of cylinders", "Horsepower"),
-            filter = 'top',
-            options = list(pageLength = 10, autoWidth = TRUE))
-```
-
-### **kableExtra** package
-
-You can also use [**kableExtra**](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) for customizing HTML tables.
-
-```{r}
-#| label: kable-example
-#| echo: true
-#| message: false
-
-library(kableExtra)
-summary(cars) |>
-  kbl(col.names = c("Speed", "Distance"), row.names = FALSE) |>
-  kable_styling(bootstrap_options = "striped", full_width = FALSE) |>
-  row_spec(0, bold = TRUE) |>
-  column_spec(1:2, width = "1.5in") 
-```
-
 
 ## Images
 
@@ -366,35 +330,21 @@ Further customization requires adding a CSS style file or code chunk or incorpor
 
 All data sources, any key R packages, and any other sources used in developing your blog should be cited in full in a list of references at the end of your blog. Your blog post should also link to these sources as they are discussed. You may choose any reference style as long as sources are fully cited (try to be consistent!).
 
-Typically, references in R Markdown (and LaTeX) files are [incorporated with a BibTeX database](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) (a .bib file). You can try this approach or manually include either a numbered or alphabetized list. 
-
-Columbia University has compiled some guidance on [how to cite data](https://guides.library.columbia.edu/datacitation). Some data sources will give you the citation information to copy and paste. Use the provided citations or citation styles in those cases.
-
-You can list R package citations with the code `citation("packageName")` in the console and then copy (and reformat as needed) the relevant text, e.g.,
-```{r}
-citation("DT")
-```
-
 The following citations are based on the American Statistical Association citation style (not all of these references are used in this document).:
 
+<!-- Data -->
+(December 2023), "College Football NIL Rankings", *On3NIL*, available at <https://www.on3.com/nil/rankings/player/college/football/>.
 
-<!-- Textbook -->
-Baumer, B. S., Kaplan, D. T., and Horton, N. J. (2021), *Modern Data Science with R* (2nd ed.), Boca Raton, FL: CRC Press.
+<!-- Data -->
+"College Football Team Win Trends", *TeamRankings*, available at <https://www.teamrankings.com/ncf/trends/win_trends/?range=yearly_2023&group=0>.
 
-<!-- Journal article -->
-Broman, K. W. and Woo, K. H. (2018), "Data Organization in Spreadsheets," *The American Statistician*, 72:1, 2-10, doi: [10.1080/00031305.2017.1375989](https://doi.org/10.1080/00031305.2017.1375989)
+<!-- Data -->
+"2023 College Football Transfer Portal Top Players", *On3NIL*, available at <https://www.on3.com/transfer-portal/industry/football/2023/>.
 
-<!-- Website -->
-Columbia University Libraries (n.d.), "Data Citation," available at <https://guides.library.columbia.edu/datacitation>.
+<!-- Data -->
+(December 2023), "List of NCAA Division I FBS football programs", *Wikipedia*, available at <https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs>.
 
-<!-- Journal article -->
-McNamara, A. and Horton N. J. (2018) "Wrangling Categorical Data in R," *The American Statistician*, 72:1, 97-104, doi: [10.1080/00031305.2017.1356375](https://doi.org/10.1080/00031305.2017.1356375).
 
-<!-- Dataset -->
-Shah, Syed A. A. (October 2022), "Starbucks Drinks" (Version 1), *Kaggle*, available at <https://www.kaggle.com/datasets/syedasimalishah/starbucks-drinks>.
-
-<!-- R package -->
-Xie Y, Cheng J, Tan X (2022). "DT: A Wrapper of the JavaScript Library 'DataTables'," R package version 0.24, available at <https://CRAN.R-project.org/package=DT>.
   
 
 
