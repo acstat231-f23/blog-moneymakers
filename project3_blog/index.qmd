@@ -32,16 +32,14 @@ library(htmltools)
 knitr::include_graphics("res/Statslogo.png")
 ```
 
-What is N.I.L.?
-N.I.L., stands for Name Image and Likeness which started on July 1, 2021, and allows college athletes to monetize themselves using their status and influence.
+## What is N.I.L.?
+N.I.L., or Name, Image, and Likeness, was legalized on July 1, 2021. It allows college athletes to monetize themselves using their status and influence.
 
-What is Our Objective?
-NIL has changed college sports, with Football leading the way. College Football has long been a money-making machine for institutions across America. However, as the schools, athletics departments, and coaches were reaping the benefits of their football teams' successes, it was illegal for players to make profits. This all changed in July 2021 with the legalization of NIL. The world of NIL has since lead to massive controversy. Arguably the largest issue that has stemmed is the lack of loyalty to one's team. The transfer portal, and the money-making possibilities that come with transferring schools, has become an intriguing possibility for players. The portal has turned into a bidding war, with money being poured into it from school sponsors and fanbases. College Football has changed from trying to develop one's own players to trying to "buy" another player from a rival team. As a group, we questioned what factors are common for players that transfer, and whether the post-NIL world has led to more success for those teams who spend more NIL money (measured by winning percentage before and after NIL legalization). 
+## What is Our Objective?
+NIL has changed college sports, with Football being impacted the greatest. College Football has long been a money-making machine for institutions across America. However, as the schools, athletics departments, and coaches reaped the benefits of their football teams' successes, it was illegal for players to make profits. This all changed in July of 2021 with the legalization of NIL. The world of NIL has since led to massive controversy. Arguably the largest issue that has stemmed is the lack of loyalty to one's team. The transfer portal, and the money-making possibilities that come with transferring schools, has become an intriguing possibility for players. The portal has turned into a bidding war, with money being poured into it from school sponsors and fanbases. College Football has changed from trying to develop one's own players to trying to "buy" another player from a rival team. As a group, we questioned what factors are common for players that transfer, and whether the post-NIL world has led to more success for those teams who spend more NIL money (measured by winning percentage before and after NIL legalization). 
+
     
-App Purpose
-The first tab displays a table where the user can be introduced to the data. They can sort by team and position and view as much or as little data as they would like for easy digestion. The second tab display is a scatterplot where the user can see a main reason for why these football athletes are worth a lot: their social media following. The third tab is another scatterplot that answers one of our objectives: comparing NIL Valuation for D1 College Football teams with their change in win percentage since NIL began. The fourth slide is a network map that shows what schools transfers have left and where they have gone to. Also, the user can change the maximum and minimum average NIL values that moved from the given team to another. Lastly, we have a "Will my Athlete Transfer?" calculator. It uses the predictors we wrangled for the visuals, allows the user to change them, and produces a percentage value for the probability an athlete would transfer with those attributes.
-    
-Where Did We Collect Our Data?
+## Where Did We Collect Our Data?
 
 1. [NIL Data](https://www.on3.com/nil/rankings/player/college/football/)
 
@@ -81,47 +79,50 @@ on_off <- as.list(c("Select All", "Deselect All"))
 predictor_model <- glm(binomialRep ~ NIL.Valuation + Followers + Rating + Position + NewConf, data = predictor_data, family = binomial)
 ```
 
+# Visuals/Interactive Displays
 
-# Table: Athletes
+
+## Table: Athletes
 
 ```{r, fig.cap="Interactive Table Example", out.width="80%", fig.align="center"}
 knitr::include_graphics("res/interactive_table.png")
 ```
 
-WRITE DESCRIPTION
+This table display allows the user to be introduced to the data in an easily-digestible way. The user can sort the table by team and/or position while viewing as little or as many players as they would like.
 
-# Scatterplot: Followers vs. Valuation
+## Scatterplot: Followers vs. Valuation
 
 ```{r, fig.cap="Interactive Scatterplot Example", out.width="80%", fig.align="center"}
 knitr::include_graphics("res/followers_valuation.png")
 ```
 
-WRITE DESCRIPTION
+NIL Valuation is based on a player's marketability. Whether it be because the player is a top national talent or has a likeable personality to go along with their skillset, they need to be able to garner attention. In today's age, a player's social media following is a tell-tale sign of how well-liked/well-known they are. 
 
-# Scatterplot: Valuation vs. Win/Loss
+This scatterplot looks at team NIL valuation (the amount of money the school has spent on NIL deals for their players) versus the total followers among the players on NIL deals.
+
+## Scatterplot: Valuation vs. Win/Loss
 
 ```{r, fig.cap="Interactive Scatterplot Example", out.width="80%", fig.align="center"}
 knitr::include_graphics("res/valuation_wl.png")
 ```
 
-WRITE DESCRIPTION
+NIL valuation is an off-the-field measure that is taken with the ultimate goal of bringing the best possible players on to one's team. However, to understand if that measure has actually worked, we can look at the change in Win/Loss percentage for teams, before and after NIL legislation.
 
-# Map: Follow The Money
+## Map: Follow The Money
 
 ```{r, fig.cap="Leafly Network Science / Mapping Example", out.width="80%", fig.align="center"}
 knitr::include_graphics("res/follow_the_money.png")
 ```
 
-WRITE DESCRIPTION
+This network map shows what schools transfers have left from and where they have gone to. Also, the user can change the maximum and minimum average NIL values that moved from one given team to another to be more specific in their searches and see various trends in the flow of money. 
 
-# Map: Will My Athlete Transfer?
+## Map: Will My Athlete Transfer?
 
 ```{r, fig.cap="Logistic Regression Predictor", out.width="80%", fig.align="center"}
 knitr::include_graphics("res/transfer_prediction.png")
 ```
 
-WRITE DESCRIPTION
-
+Lastly, we have a "Will my Athlete Transfer?" calculator. It uses various predictors, allows the user to change them, and produces a percentage value for the probability an athlete would transfer with those attributes. The probability calculation is based on data of past transfers with similar attributes.
 
 
 ## Links 
@@ -157,113 +158,7 @@ knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
 ```
 
 
-## Tables
-
-
-## Images
-
-Images and gifs can be displayed using code chunks:
-
-```{r}
-#| fig.cap: '"Safe Space" by artist Kenesha Sneed'
-#| out.width: 80%
-#| fig.align: center
-
-knitr::include_graphics("../img/Kenesha-Sneed_safe-space.jpeg")
-```
-
-
-```{r}
-#| fig.cap: "This is a figure caption"
-#| out.width: 50%
-#| fig.align: center
-knitr::include_graphics("https://media.giphy.com/media/H7ZrrA9V2pd3Tehdds/giphy.gif")
-```
-
-You may also use Markdown syntax for displaying images as shown below, but code chunks offer easier customization of the image size and alignment.
-
-![This is another figure caption](https://media.giphy.com/media/8i5IvxP9ZLgmjXN1BF/giphy.gif)
-
-Either way, the file path can be a local path within your project directory or a URL for an image hosted online. This syntax works for PNG, PDF, JPG, and even GIF formats.
-
-
-## Equations
-
-You might include equations if part of the purpose of your blog is to explain a statistical method. There are two ways to include equations:
-
-* Inline: $b \sim N(0, \sigma^2_b)$
-* Display-style (displayed on its own line): 
-$$\frac{\sigma^2_b}{\sigma^2_b + \sigma^2_e}$$
-
-For typesetting equations appropriately, check out the [AMS-LaTeX quick reference](https://github.com/manuelemacchia/math-latex/blob/master/amsmath.pdf) or take a look at the *Symbols in math mode* section of this  [cheat sheet](https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf)  (or do some extra Googling---there are *many* resources).
-
-
-
-# Formatting
-
-## Tabbed subsections {.tabset}
-
-Each subsection below the "Tabbed subsections" section heading will appear in a tab. See R Markdown Cookbook [Section 7.6: Put content in tabs](https://bookdown.org/yihui/rmarkdown-cookbook/html-tabs.html) for additional customization options. 
-
-### Bulleted list
-
-You can make a bulleted list like this:
-
-* item 1
-* item 2
-* item 3
-
-
-### Numbered list
-
-
-You can make a numbered list like this
-
-1. First thing I want to say
-2. Second thing I want to say
-3. Third thing I want to say
-
-
-
-## Column formatting
-
-<!-- Begin columns environment -->
-:::::: {style="display: flex; font-size: large;"}
-
-<!-- Create a column -->
-::: {}
-### Content Column 1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel ipsum eu sem facilisis porttitor. Integer eu tristique lectus. Vestibulum nisi risus, porta sit amet cursus nec, auctor ac tellus. Integer egestas viverra rhoncus. Fusce id sem non ante vestibulum posuere ac sed lorem. Proin id felis a mi pellentesque viverra in at nulla. Duis augue nulla, aliquet ac ligula a, sagittis varius lorem.
-
-
-
-:::
-
-<!-- Create another column (this one is just adding horizontal space to separate content) -->
-::: {}
-<div class="horizontalgap" style="width:60px"></div>
-:::
-
-<!-- Create another column -->
-::: {}
-
-### Content Column 2
-
-Aliquam non ante et erat luctus hendrerit eu ac justo. Fusce lacinia pulvinar neque non laoreet. Fusce vitae mauris pharetra, scelerisque purus eget, pharetra nisl. Aenean volutpat elementum tortor vitae rhoncus. Phasellus nec tellus euismod neque congue imperdiet tincidunt in mauris. Morbi eu lorem molestie, hendrerit lorem nec, semper massa. Sed vulputate hendrerit ex, eget cursus purus. Pellentesque consequat erat leo, eleifend porttitor lacus porta at. Vivamus faucibus quam ipsum, id condimentum ligula malesuada ultrices. Nullam luctus leo elit, vitae rutrum nibh venenatis eget. Nam at sodales purus. Proin nulla tellus, lacinia eget pretium sed, vehicula aliquet neque. Morbi vel eros elementum, suscipit elit eu, consequat libero. Nulla nec aliquet neque. Nunc bibendum sapien lectus, sed elementum nisi rutrum non. Ut vulputate at lacus eget maximus.
-
-```{r}
-#| out.width: 80%
-#| fig.align: right
-mtcars |>
-  ggplot(aes(x = wt, y = mpg)) +
-  geom_point()
-```
-
-:::
-::::::
-<!-- End columns environment with matching length indicator-->
-
+# Conclusions
 
 
 

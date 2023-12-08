@@ -36,8 +36,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -49,28 +47,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a>
+  <ul class="collapse">
+  <li><a href="#what-is-n.i.l." id="toc-what-is-n.i.l." class="nav-link" data-scroll-target="#what-is-n.i.l.">What is N.I.L.?</a></li>
+  <li><a href="#what-is-our-objective" id="toc-what-is-our-objective" class="nav-link" data-scroll-target="#what-is-our-objective">What is Our Objective?</a></li>
+  <li><a href="#where-did-we-collect-our-data" id="toc-where-did-we-collect-our-data" class="nav-link" data-scroll-target="#where-did-we-collect-our-data">Where Did We Collect Our Data?</a></li>
+  </ul></li>
+  <li><a href="#visualsinteractive-displays" id="toc-visualsinteractive-displays" class="nav-link" data-scroll-target="#visualsinteractive-displays">Visuals/Interactive Displays</a>
+  <ul class="collapse">
   <li><a href="#table-athletes" id="toc-table-athletes" class="nav-link" data-scroll-target="#table-athletes">Table: Athletes</a></li>
   <li><a href="#scatterplot-followers-vs.-valuation" id="toc-scatterplot-followers-vs.-valuation" class="nav-link" data-scroll-target="#scatterplot-followers-vs.-valuation">Scatterplot: Followers vs.&nbsp;Valuation</a></li>
   <li><a href="#scatterplot-valuation-vs.-winloss" id="toc-scatterplot-valuation-vs.-winloss" class="nav-link" data-scroll-target="#scatterplot-valuation-vs.-winloss">Scatterplot: Valuation vs.&nbsp;Win/Loss</a></li>
   <li><a href="#map-follow-the-money" id="toc-map-follow-the-money" class="nav-link" data-scroll-target="#map-follow-the-money">Map: Follow The Money</a></li>
-  <li><a href="#map-will-my-athlete-transfer" id="toc-map-will-my-athlete-transfer" class="nav-link" data-scroll-target="#map-will-my-athlete-transfer">Map: Will My Athlete Transfer?</a>
-  <ul class="collapse">
+  <li><a href="#map-will-my-athlete-transfer" id="toc-map-will-my-athlete-transfer" class="nav-link" data-scroll-target="#map-will-my-athlete-transfer">Map: Will My Athlete Transfer?</a></li>
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">Visualizations</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
-  <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images">Images</a></li>
-  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a></li>
   </ul></li>
-  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a>
-  <ul class="collapse">
-  <li><a href="#tabbed-subsections" id="toc-tabbed-subsections" class="nav-link" data-scroll-target="#tabbed-subsections">Tabbed subsections</a>
-  <ul class="collapse">
-  <li><a href="#bulleted-list" id="toc-bulleted-list" class="nav-link" data-scroll-target="#bulleted-list">Bulleted list</a></li>
-  <li><a href="#numbered-list" id="toc-numbered-list" class="nav-link" data-scroll-target="#numbered-list">Numbered list</a></li>
-  </ul></li>
-  <li><a href="#column-formatting" id="toc-column-formatting" class="nav-link" data-scroll-target="#column-formatting">Column formatting</a></li>
-  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   <li><a href="#customizing-your-blog-design" id="toc-customizing-your-blog-design" class="nav-link" data-scroll-target="#customizing-your-blog-design">Customizing your blog design</a>
   <ul class="collapse">
   <li><a href="#theme" id="toc-theme" class="nav-link" data-scroll-target="#theme">Theme</a></li>
@@ -124,10 +117,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>What is N.I.L.? N.I.L., stands for Name Image and Likeness which started on July 1, 2021, and allows college athletes to monetize themselves using their status and influence.</p>
-<p>What is Our Objective? We summed up the NIL valuation of each football program to see how the school’s sponsors’ and fanbases’ investment in acquiring their best high school/transfer talent pays off in terms of the team’s win percentage before and after July 1, 2021.</p>
-<p>App Purpose The first tab displays a table where the user can be introduced to the data. They can sort by team and position and view as much or as little data as they would like for easy digestion. The second tab display is a scatterplot where the user can see a main reason for why these football athletes are worth a lot: their social media following. The final tab is another scatterplot that answers our objective: comparing NIL Valuation for D1 College Football teams with their change in win percentage since NIL began.</p>
-<p>Where Did We Collect Our Data?</p>
+<section id="what-is-n.i.l." class="level2">
+<h2 class="anchored" data-anchor-id="what-is-n.i.l.">What is N.I.L.?</h2>
+<p>N.I.L., or Name, Image, and Likeness, was legalized on July 1, 2021. It allows college athletes to monetize themselves using their status and influence.</p>
+</section>
+<section id="what-is-our-objective" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-our-objective">What is Our Objective?</h2>
+<p>NIL has changed college sports, with Football being impacted the greatest. College Football has long been a money-making machine for institutions across America. However, as the schools, athletics departments, and coaches reaped the benefits of their football teams’ successes, it was illegal for players to make profits. This all changed in July of 2021 with the legalization of NIL. The world of NIL has since led to massive controversy. Arguably the largest issue that has stemmed is the lack of loyalty to one’s team. The transfer portal, and the money-making possibilities that come with transferring schools, has become an intriguing possibility for players. The portal has turned into a bidding war, with money being poured into it from school sponsors and fanbases. College Football has changed from trying to develop one’s own players to trying to “buy” another player from a rival team. As a group, we questioned what factors are common for players that transfer, and whether the post-NIL world has led to more success for those teams who spend more NIL money (measured by winning percentage before and after NIL legalization).</p>
+</section>
+<section id="where-did-we-collect-our-data" class="level2">
+<h2 class="anchored" data-anchor-id="where-did-we-collect-our-data">Where Did We Collect Our Data?</h2>
 <ol type="1">
 <li><p><a href="https://www.on3.com/nil/rankings/player/college/football/">NIL Data</a></p></li>
 <li><p><a href="%22https://www.teamrankings.com/ncf/trends/win_trends/?range=yearly_2023&amp;group=0%22">Win Percentage Data</a></p></li>
@@ -135,8 +134,11 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="%22https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs%22">School Conferences</a></p></li>
 </ol>
 </section>
-<section id="table-athletes" class="level1">
-<h1>Table: Athletes</h1>
+</section>
+<section id="visualsinteractive-displays" class="level1">
+<h1>Visuals/Interactive Displays</h1>
+<section id="table-athletes" class="level2">
+<h2 class="anchored" data-anchor-id="table-athletes">Table: Athletes</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -147,10 +149,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>WRITE DESCRIPTION</p>
+<p>This table display allows the user to be introduced to the data in an easily-digestible way. The user can sort the table by team and/or position while viewing as little or as many players as they would like.</p>
 </section>
-<section id="scatterplot-followers-vs.-valuation" class="level1">
-<h1>Scatterplot: Followers vs.&nbsp;Valuation</h1>
+<section id="scatterplot-followers-vs.-valuation" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot-followers-vs.-valuation">Scatterplot: Followers vs.&nbsp;Valuation</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -161,10 +163,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>WRITE DESCRIPTION</p>
+<p>NIL Valuation is based on a player’s marketability. Whether it be because the player is a top national talent or has a likeable personality to go along with their skillset, they need to be able to garner attention. In today’s age, a player’s social media following is a tell-tale sign of how well-liked/well-known they are.</p>
+<p>This scatterplot looks at team NIL valuation (the amount of money the school has spent on NIL deals for their players) versus the total followers among the players on NIL deals.</p>
 </section>
-<section id="scatterplot-valuation-vs.-winloss" class="level1">
-<h1>Scatterplot: Valuation vs.&nbsp;Win/Loss</h1>
+<section id="scatterplot-valuation-vs.-winloss" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot-valuation-vs.-winloss">Scatterplot: Valuation vs.&nbsp;Win/Loss</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -175,10 +178,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>WRITE DESCRIPTION</p>
+<p>NIL valuation is an off-the-field measure that is taken with the ultimate goal of bringing the best possible players on to one’s team. However, to understand if that measure has actually worked, we can look at the change in Win/Loss percentage for teams, before and after NIL legislation.</p>
 </section>
-<section id="map-follow-the-money" class="level1">
-<h1>Map: Follow The Money</h1>
+<section id="map-follow-the-money" class="level2">
+<h2 class="anchored" data-anchor-id="map-follow-the-money">Map: Follow The Money</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -189,10 +192,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>WRITE DESCRIPTION</p>
+<p>This network map shows what schools transfers have left from and where they have gone to. Also, the user can change the maximum and minimum average NIL values that moved from one given team to another to be more specific in their searches and see various trends in the flow of money.</p>
 </section>
-<section id="map-will-my-athlete-transfer" class="level1">
-<h1>Map: Will My Athlete Transfer?</h1>
+<section id="map-will-my-athlete-transfer" class="level2">
+<h2 class="anchored" data-anchor-id="map-will-my-athlete-transfer">Map: Will My Athlete Transfer?</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -203,7 +206,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>WRITE DESCRIPTION</p>
+<p>Lastly, we have a “Will my Athlete Transfer?” calculator. It uses various predictors, allows the user to change them, and produces a percentage value for the probability an athlete would transfer with those attributes. The probability calculation is based on data of past transfers with similar attributes.</p>
+</section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
 <p>You can include <a href="https://www.datadreaming.org/post/r-markdown-theme-gallery/">links</a> using Markdown syntax as shown.</p>
@@ -228,107 +232,9 @@ ul.task-list li input[type="checkbox"] {
 </iframe>
 </div>
 </section>
-<section id="tables" class="level2">
-<h2 class="anchored" data-anchor-id="tables">Tables</h2>
 </section>
-<section id="images" class="level2">
-<h2 class="anchored" data-anchor-id="images">Images</h2>
-<p>Images and gifs can be displayed using code chunks:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/Kenesha-Sneed_safe-space.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">“Safe Space” by artist Kenesha Sneed</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://media.giphy.com/media/H7ZrrA9V2pd3Tehdds/giphy.gif" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">This is a figure caption</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>You may also use Markdown syntax for displaying images as shown below, but code chunks offer easier customization of the image size and alignment.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://media.giphy.com/media/8i5IvxP9ZLgmjXN1BF/giphy.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">This is another figure caption</figcaption>
-</figure>
-</div>
-<p>Either way, the file path can be a local path within your project directory or a URL for an image hosted online. This syntax works for PNG, PDF, JPG, and even GIF formats.</p>
-</section>
-<section id="equations" class="level2">
-<h2 class="anchored" data-anchor-id="equations">Equations</h2>
-<p>You might include equations if part of the purpose of your blog is to explain a statistical method. There are two ways to include equations:</p>
-<ul>
-<li>Inline: <span class="math inline">\(b \sim N(0, \sigma^2_b)\)</span></li>
-<li>Display-style (displayed on its own line): <span class="math display">\[\frac{\sigma^2_b}{\sigma^2_b + \sigma^2_e}\]</span></li>
-</ul>
-<p>For typesetting equations appropriately, check out the <a href="https://github.com/manuelemacchia/math-latex/blob/master/amsmath.pdf">AMS-LaTeX quick reference</a> or take a look at the <em>Symbols in math mode</em> section of this <a href="https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">cheat sheet</a> (or do some extra Googling—there are <em>many</em> resources).</p>
-</section>
-</section>
-<section id="formatting" class="level1">
-<h1>Formatting</h1>
-<section id="tabbed-subsections" class="level2 tabset">
-<h2 class="tabset anchored" data-anchor-id="tabbed-subsections">Tabbed subsections</h2>
-<p>Each subsection below the “Tabbed subsections” section heading will appear in a tab. See R Markdown Cookbook <a href="https://bookdown.org/yihui/rmarkdown-cookbook/html-tabs.html">Section 7.6: Put content in tabs</a> for additional customization options.</p>
-<section id="bulleted-list" class="level3">
-<h3 class="anchored" data-anchor-id="bulleted-list">Bulleted list</h3>
-<p>You can make a bulleted list like this:</p>
-<ul>
-<li>item 1</li>
-<li>item 2</li>
-<li>item 3</li>
-</ul>
-</section>
-<section id="numbered-list" class="level3">
-<h3 class="anchored" data-anchor-id="numbered-list">Numbered list</h3>
-<p>You can make a numbered list like this</p>
-<ol type="1">
-<li>First thing I want to say</li>
-<li>Second thing I want to say</li>
-<li>Third thing I want to say</li>
-</ol>
-</section>
-</section>
-<section id="column-formatting" class="level2">
-<h2 class="anchored" data-anchor-id="column-formatting">Column formatting</h2>
-<!-- Begin columns environment -->
-<div style="display: flex; font-size: large;">
-<!-- Create a column -->
-<section id="content-column-1" class="level3">
-<h3 class="anchored" data-anchor-id="content-column-1">Content Column 1</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel ipsum eu sem facilisis porttitor. Integer eu tristique lectus. Vestibulum nisi risus, porta sit amet cursus nec, auctor ac tellus. Integer egestas viverra rhoncus. Fusce id sem non ante vestibulum posuere ac sed lorem. Proin id felis a mi pellentesque viverra in at nulla. Duis augue nulla, aliquet ac ligula a, sagittis varius lorem.</p>
-</section>
-<!-- Create another column (this one is just adding horizontal space to separate content) -->
-<div>
-<div class="horizontalgap" style="width:60px">
-
-</div>
-</div>
-<!-- Create another column -->
-<section id="content-column-2" class="level3">
-<h3 class="anchored" data-anchor-id="content-column-2">Content Column 2</h3>
-<p>Aliquam non ante et erat luctus hendrerit eu ac justo. Fusce lacinia pulvinar neque non laoreet. Fusce vitae mauris pharetra, scelerisque purus eget, pharetra nisl. Aenean volutpat elementum tortor vitae rhoncus. Phasellus nec tellus euismod neque congue imperdiet tincidunt in mauris. Morbi eu lorem molestie, hendrerit lorem nec, semper massa. Sed vulputate hendrerit ex, eget cursus purus. Pellentesque consequat erat leo, eleifend porttitor lacus porta at. Vivamus faucibus quam ipsum, id condimentum ligula malesuada ultrices. Nullam luctus leo elit, vitae rutrum nibh venenatis eget. Nam at sodales purus. Proin nulla tellus, lacinia eget pretium sed, vehicula aliquet neque. Morbi vel eros elementum, suscipit elit eu, consequat libero. Nulla nec aliquet neque. Nunc bibendum sapien lectus, sed elementum nisi rutrum non. Ut vulputate at lacus eget maximus.</p>
-<div class="cell" data-layout-align="right">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</div>
-<!-- End columns environment with matching length indicator-->
-</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
 </section>
 <section id="customizing-your-blog-design" class="level1">
 <h1>Customizing your blog design</h1>
