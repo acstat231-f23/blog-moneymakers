@@ -146,7 +146,9 @@ knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
 
 # Conclusions
 
-Due to NIL being such a new topic, 
+Due to NIL being such a new topic, our group didn't possess any pre-existing knowledge about the trends we might encounter. Therefore making informed hypothesis was difficult, because information on the topic is sparse. 
+
+Looking at the results, we can see that 
 
 
 # Customizing your blog design
