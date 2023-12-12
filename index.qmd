@@ -4,7 +4,7 @@ author: "Money Makers: Tucker, Naaveen, Wolfie"
 date: "December 13, 2023"
 format:
   html:
-    theme: minty
+    theme: lumen
     toc: true
 ---
 
@@ -201,25 +201,6 @@ There are 25 Bootswatch themes included with Quarto. You can change the theme ea
 - zephyr
 
 There are, I'm sure, many more similar packages with built in themes, or you can look into how to include a CSS code chunk to customize aspects of a theme.  
-
-## Synax highlighting
-
-You can also change the code chunk syntax highlighting option (Line 7, `highlight`): 
-
-* `"default"`
-* `"tango"`
-* `"pygments"`
-* `"kate"`
-* `"monochrome"`
-* `"espresso"`
-* `"zenburn"`
-* `"haddock"`
-* `"textmate"` 
-* `NULL` for no syntax highlighting (not recommended)
-
-## Font size, type, and other customization
-
-Further customization requires adding a CSS style file or code chunk or incorporating other development options. Further customization should be your lowest and final priority for the project. Ensure your content is fully prepared first.
 
 
 # References
