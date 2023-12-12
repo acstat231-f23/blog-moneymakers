@@ -138,14 +138,14 @@ You should include links to relevant sites as you write. You should additionally
 
 
 # Interactive Display
-
+<iframe src="https://tbarach26.shinyapps.io/MoneyMakers/" height=900px, width=1200px />
 
 ```{r}
 #| label: ds-salaries-app
 #| out.width: "100%"
 
-knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
-                   height = "900px")
+#knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
+#                   height = "800px")
 ```
 
 
