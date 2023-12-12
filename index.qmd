@@ -33,10 +33,14 @@ knitr::include_graphics("res/Statslogo.png")
 ```
 
 ## What is N.I.L.?
-The ability to profit from ones own N.I.L., or Name, Image, and Likeness, became legal for college athletes on July 1, 2021. The rule change allows college athletes to monetize their own status and influence.
+
+The ability to profit from one's own Name, Image, and Likeness (NIL), became legal for college athletes on July 1, 2021. The rule change allows college athletes to monetize their own status and influence.
 
 ## What is Our Objective?
-NIL has changed college sports, with Football being impacted the greatest. College Football has long been a money-making machine for institutions across America. However, as the schools, athletics departments, and coaches reaped the benefits of their football teams' successes, it was illegal for players to make profits. This all changed in July of 2021 with the legalization of NIL. The world of NIL has since led to massive controversy. Arguably the largest issue that has stemmed is the concern that people are no longer loyal to their team. The transfer portal, and the money-making possibilities that come with transferring schools, has become an increasingly intriguing option for players. The portal has turned into a bidding war, with money being poured into it from school sponsors and fanbases The focus in college Football has shifted from an effort to develop one's own players to an attempt to "buy" players from rival teams. As a group, we questioned what factors are common for players that transfer, and whether the post-NIL world has led to more success for those teams who spend more NIL money (measured by winning percentage before and after NIL legalization). 
+
+NIL has changed college sports, with Football being impacted the greatest. College Football has long been a money-making machine for institutions across America. However, as the schools, athletics departments, and coaches reaped the benefits of their football teams' successes, it was illegal for players to make profits. This all changed in July of 2021 with the legalization of NIL. The world of NIL has since led to massive controversy. Arguably the largest issue that has stemmed is the concern that people are no longer loyal to their team. The transfer portal, and the money-making possibilities that come with transferring schools, has become an increasingly intriguing option for players. The portal has turned into a bidding war, with money being poured into it from school sponsors and fanbases The focus in college Football has shifted from an effort to develop one's own players to an attempt to "buy" players from rival teams. 
+
+As a group, we question what factors are common for players that transfer, and whether the post-NIL world has led to more success for those teams who spend more NIL money (measured by winning percentage before and after NIL legalization). 
 
     
 ## Where Did We Collect Our Data?
