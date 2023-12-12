@@ -1,10 +1,9 @@
 ---
 title: "Statistics Behind N.I.L."
-author: "Money Makers: Tucker, Naaveen, Wolfie"
-date: "December 13, 2023"
+authors: "Money Makers: Tucker, Naaveen, Wolfie"
 format:
   html:
-    theme: morph
+    theme: cyborg
     toc: true
 ---
 
@@ -130,13 +129,6 @@ knitr::include_graphics("res/transfer_prediction.png")
 Lastly, we have a "Will my Athlete Transfer?" calculator. It uses various predictors, allows the user to change them, and produces a percentage value for the probability an athlete would transfer with those attributes. The probability calculation is based on data of past transfers with similar attributes.
 
 
-## Links 
-
-You can include [links](https://www.datadreaming.org/post/r-markdown-theme-gallery/) using Markdown syntax as shown. 
-
-You should include links to relevant sites as you write. You should additionally include a list of references as the end of your blog with full citations (and relevant links).
-
-
 # Interactive Display
 <iframe src="https://tbarach26.shinyapps.io/MoneyMakers/" height=900px, width=1200px />
 
@@ -156,51 +148,7 @@ With NIL being such a new topic, our group didn't possess any pre-existing knowl
 Looking at the results, it is evident that N.I.L. has exerted a more significant influence on player transfers and destination choices than the on-field impact for teams. In each of the scatterplot visuals, the most glaring observation is the discrepancy in NIL spending between various D1 football teams. Schools such as Texas, Colorado, and Alabama have invested significantly most into their NIL funds, as compared to the majority of other teams. Therefore, both scatterplots have these extreme outliers that impact the fit of a best-fit line. Therefore, we decided to include correlation values and the option to remove certain teams (specifically, these outliers) from the model. The removal of these outliers improves both the fit of the regression line, as well as the correlation value. The scatterplot of Followers vs NIL Valuation has an extremely strong positive correlation, with an r value of 0.77. The scatterplot of NIL Valuation vs Win/Loss Percentage shows a moderate, positive correlation, with an r value of only 0.42. Thus, confirming that the type of player that would transfer (one that has more followers) is more closely associated with an increased NIL valuation. The weaker correlation between NIL Valuation and Win/Loss Percentage conveys that increased NIL spending is not impacting on-field performance, yet. This trend is understandable as two years (timespan since NIL legislation) is generally not enough time to see significant growth or decline in the performance an entire team. Re-running this model in a few years might lead to a more significant trend.
 
 
-# Customizing your blog design
-
-
-As a *final* detail **only** if you have time, you can explore options for customizing the style of your blog. By default, we are using the `cosmo` theme from Bootswatch themes (see Line 7 of this file if you want to switch out themes). 
-
-
-## Theme
-
-There are 25 Bootswatch themes included with Quarto. You can change the theme easily by specifying one of these themes on Line 7: 
-
-- default  
-- cerulean  
-- cosmo  
-- cyborg  
-- darkly  
-- flatly  
-- journal  
-- litera  
-- lumen  
-- lux  
-- materia  
-- minty  
-- morph  
-- pulse  
-- quartz  
-- sandstone  
-- simplex  
-- sketchy  
-- slate  
-- solar  
-- spacelab  
-- superhero  
-- united  
-- vapor  
-- yeti  
-- zephyr
-
-There are, I'm sure, many more similar packages with built in themes, or you can look into how to include a CSS code chunk to customize aspects of a theme.  
-
-
 # References
-
-All data sources, any key R packages, and any other sources used in developing your blog should be cited in full in a list of references at the end of your blog. Your blog post should also link to these sources as they are discussed. You may choose any reference style as long as sources are fully cited (try to be consistent!).
-
-The following citations are based on the American Statistical Association citation style (not all of these references are used in this document).:
 
 <!-- Data -->
 (December 2023), "College Football NIL Rankings", *On3NIL*, available at <https://www.on3.com/nil/rankings/player/college/football/>.

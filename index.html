@@ -6,8 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Money Makers: Tucker, Naaveen, Wolfie">
-<meta name="dcterms.date" content="2023-12-13">
 
 <title>Statistics Behind N.I.L.</title>
 <style>
@@ -31,10 +29,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 
 
 </head>
@@ -60,14 +58,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#scatterplot-valuation-vs.-winloss" id="toc-scatterplot-valuation-vs.-winloss" class="nav-link" data-scroll-target="#scatterplot-valuation-vs.-winloss">Scatterplot: Valuation vs.&nbsp;Win/Loss</a></li>
   <li><a href="#map-follow-the-money" id="toc-map-follow-the-money" class="nav-link" data-scroll-target="#map-follow-the-money">Map: Follow The Money</a></li>
   <li><a href="#map-will-my-athlete-transfer" id="toc-map-will-my-athlete-transfer" class="nav-link" data-scroll-target="#map-will-my-athlete-transfer">Map: Will My Athlete Transfer?</a></li>
+<<<<<<< Updated upstream
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+=======
+>>>>>>> Stashed changes
   </ul></li>
   <li><a href="#interactive-display" id="toc-interactive-display" class="nav-link" data-scroll-target="#interactive-display">Interactive Display</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
-  <li><a href="#customizing-your-blog-design" id="toc-customizing-your-blog-design" class="nav-link" data-scroll-target="#customizing-your-blog-design">Customizing your blog design</a>
-  <ul class="collapse">
-  <li><a href="#theme" id="toc-theme" class="nav-link" data-scroll-target="#theme">Theme</a></li>
-  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -90,12 +87,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 13, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -207,11 +198,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Lastly, we have a “Will my Athlete Transfer?” calculator. It uses various predictors, allows the user to change them, and produces a percentage value for the probability an athlete would transfer with those attributes. The probability calculation is based on data of past transfers with similar attributes.</p>
 </section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
-<p>You can include <a href="https://www.datadreaming.org/post/r-markdown-theme-gallery/">links</a> using Markdown syntax as shown.</p>
-<p>You should include links to relevant sites as you write. You should additionally include a list of references as the end of your blog with full citations (and relevant links).</p>
 </section>
+<<<<<<< Updated upstream
 </section>
 <section id="interactive-display" class="level1">
 <h1>Interactive Display</h1>
@@ -283,11 +271,22 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>There are, I’m sure, many more similar packages with built in themes, or you can look into how to include a CSS code chunk to customize aspects of a theme.</p>
 </section>
+=======
+<section id="interactive-display" class="level1">
+<h1>Interactive Display</h1>
+<div class="cell">
+<iframe src="https://tbarach26.shinyapps.io/MoneyMakers/?showcase=0" width="100%" height="900px" data-external="1">
+</iframe>
+</div>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<p>With NIL being such a new topic, our group didn’t possess any pre-existing knowledge about the trends we might encounter. Consequently, formulating well-informed hypotheses proved challenging due to the limited availability of information on the subject.</p>
+<p>Looking at the results, it is evident that N.I.L. has exerted a more significant influence on player transfers and destination choices than the on-field impact for teams. In each of the scatterplot visuals, the most glaring observation is the discrepancy in NIL spending between various D1 football teams. Schools such as Texas, Colorado, and Alabama have invested significantly most into their NIL funds, as compared to the majority of other teams. Therefore, both scatterplots have these extreme outliers that impact the fit of a best-fit line. Therefore, we decided to include correlation values and the option to remove certain teams (specifically, these outliers) from the model. The removal of these outliers improves both the fit of the regression line, as well as the correlation value. The scatterplot of Followers vs NIL Valuation has an extremely strong positive correlation, with an r value of 0.77. The scatterplot of NIL Valuation vs Win/Loss Percentage shows a moderate, positive correlation, with an r value of only 0.42. Thus, confirming that the type of player that would transfer (one that has more followers) is more closely associated with an increased NIL valuation. The weaker correlation between NIL Valuation and Win/Loss Percentage conveys that increased NIL spending is not impacting on-field performance, yet. This trend is understandable as two years (timespan since NIL legislation) is generally not enough time to see significant growth or decline in the performance an entire team. Re-running this model in a few years might lead to a more significant trend.</p>
+>>>>>>> Stashed changes
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
-<p>All data sources, any key R packages, and any other sources used in developing your blog should be cited in full in a list of references at the end of your blog. Your blog post should also link to these sources as they are discussed. You may choose any reference style as long as sources are fully cited (try to be consistent!).</p>
-<p>The following citations are based on the American Statistical Association citation style (not all of these references are used in this document).:</p>
 <!-- Data -->
 <p>(December 2023), “College Football NIL Rankings”, <em>On3NIL</em>, available at <a href="https://www.on3.com/nil/rankings/player/college/football/" class="uri">https://www.on3.com/nil/rankings/player/college/football/</a>.</p>
 <!-- Data -->
