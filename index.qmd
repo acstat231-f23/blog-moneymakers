@@ -160,6 +160,7 @@ knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
 
 # Conclusions
 
+Due to NIL being such a new topic, 
 
 
 # Customizing your blog design
