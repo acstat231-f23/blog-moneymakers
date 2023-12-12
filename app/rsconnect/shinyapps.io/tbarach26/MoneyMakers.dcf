@@ -5,7 +5,7 @@ account: tbarach26
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10369711
-bundleId: 7982289
+bundleId: 8040906
 url: https://tbarach26.shinyapps.io/MoneyMakers/
 version: 1
 asMultiple: FALSE

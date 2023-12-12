@@ -354,7 +354,7 @@ server <- function(input, output, session){
     
     HTML(paste0(paste0("There is a ", strength, " relationship of ",
     value, " between Total Followers and Total NIL Valuation", sep = " - "),
-    paste0(round(value * value, 2), "% of the variability in Total NIL Valuation
+    paste0(round(value * value * 100, 2), "% of the variability in Total NIL Valuation
           is explained by Total Followers")))
   })
 
@@ -417,7 +417,7 @@ server <- function(input, output, session){
     HTML(paste0(paste0("There is a ", strength, " relationship of ", value, "
                        between ", axis_labels[axis_choices == input$x_var], 
                        " and Win Loss Percentage", sep = " - "),
-                paste0(round(value * value, 2),
+                paste0(round(value * value * 100, 2),
                 "% of the variability in Win/Loss Percentage is explained by ",
                        axis_labels[axis_choices == input$x_var])))
   })
@@ -477,14 +477,12 @@ server <- function(input, output, session){
     selectedData()
   })
     
-
- # testing1 <- filter(nil_transfer_data, Last.Team %in% c("alabama crimson tide"))$New.Team
   
   
+  # Changes the output for the other dropdown menu to only show team's that that school had athletes transfer to/from:
   observe({
     
     if(!is.null(input$displayTeams)) {
-      #is_repeat <- TRUE
       if(input$whichWay == "n_o") {# New to old
         old_team_choices_active <- filter(data_for_map_table(), `New School` %in% input$displayTeams)$`Past School`
         updateSelectizeInput(session, "deltaTeams", choices = old_team_choices_active)
@@ -525,6 +523,7 @@ server <- function(input, output, session){
   # Add edges between start and end points
   
   
+  # Adds lines onto the leafly map and shows info when highlighting over:
   for(i in 1:nrow(map_data)){
     if(!is.na(map_data$avg_valuation[i])) {
       m <- m %>% addPolylines(lng = c(map_data$long_last[i], map_data$long_new[i]), 
