@@ -129,16 +129,6 @@ knitr::include_graphics("res/transfer_prediction.png")
 Lastly, we have a "Will my Athlete Transfer?" calculator. It uses various predictors, allows the user to change them, and produces a percentage value for the probability an athlete would transfer with those attributes. The probability calculation is based on data of past transfers with similar attributes.
 
 
-# Interactive Display
-<iframe src="https://tbarach26.shinyapps.io/MoneyMakers/" height=900px, width=1200px />
-
-```{r}
-#| label: ds-salaries-app
-#| out.width: "100%"
-
-#knitr::include_app("https://tbarach26.shinyapps.io/MoneyMakers/",
-#                   height = "800px")
-```
 
 
 # Conclusions
@@ -147,6 +137,7 @@ With NIL being such a new topic, our group didn't possess any pre-existing knowl
 
 Looking at the results, it is evident that N.I.L. has exerted a more significant influence on player transfers and destination choices than the on-field impact for teams. In each of the scatterplot visuals, the most glaring observation is the discrepancy in NIL spending between various D1 football teams. Schools such as Texas, Colorado, and Alabama have invested significantly most into their NIL funds, as compared to the majority of other teams. Therefore, both scatterplots have these extreme outliers that impact the fit of a best-fit line. Therefore, we decided to include correlation values and the option to remove certain teams (specifically, these outliers) from the model. The removal of these outliers improves both the fit of the regression line, as well as the correlation value. The scatterplot of Followers vs NIL Valuation has an extremely strong positive correlation, with an r value of 0.77. The scatterplot of NIL Valuation vs Win/Loss Percentage shows a moderate, positive correlation, with an r value of only 0.42. Thus, confirming that the type of player that would transfer (one that has more followers) is more closely associated with an increased NIL valuation. The weaker correlation between NIL Valuation and Win/Loss Percentage conveys that increased NIL spending is not impacting on-field performance, yet. This trend is understandable as two years (timespan since NIL legislation) is generally not enough time to see significant growth or decline in the performance an entire team. Re-running this model in a few years might lead to a more significant trend.
 
+We are interested to see when we run our app in a few years, will schools like Colorado still be a top spender? Will new universities not previously mentioned realize their team's potential if they invest in talent? Also, how much more significant will our predictors be in a few years for our logistic regression transfer predictor when we collect more data?
 
 # References
 
@@ -161,6 +152,11 @@ Looking at the results, it is evident that N.I.L. has exerted a more significant
 
 <!-- Data -->
 (December 2023), "List of NCAA Division I FBS football programs", *Wikipedia*, available at <https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs>.
+
+
+# Interactive Display
+<iframe src="https://tbarach26.shinyapps.io/MoneyMakers/" height=900px, width=1200px />
+
 
 
   

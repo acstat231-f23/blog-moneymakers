@@ -59,9 +59,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#map-follow-the-money" id="toc-map-follow-the-money" class="nav-link" data-scroll-target="#map-follow-the-money">Map: Follow The Money</a></li>
   <li><a href="#map-will-my-athlete-transfer" id="toc-map-will-my-athlete-transfer" class="nav-link" data-scroll-target="#map-will-my-athlete-transfer">Map: Will My Athlete Transfer?</a></li>
   </ul></li>
-  <li><a href="#interactive-display" id="toc-interactive-display" class="nav-link" data-scroll-target="#interactive-display">Interactive Display</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#interactive-display" id="toc-interactive-display" class="nav-link" data-scroll-target="#interactive-display">Interactive Display</a></li>
   </ul>
 </nav>
 </div>
@@ -195,79 +195,11 @@ ul.task-list li input[type="checkbox"] {
 <p>Lastly, we have a “Will my Athlete Transfer?” calculator. It uses various predictors, allows the user to change them, and produces a percentage value for the probability an athlete would transfer with those attributes. The probability calculation is based on data of past transfers with similar attributes.</p>
 </section>
 </section>
-<section id="interactive-display" class="level1">
-<h1>Interactive Display</h1>
-<iframe src="https://tbarach26.shinyapps.io/MoneyMakers/" height="900px," width="1200px">
-</section>
 <section id="conclusions" class="level1">
 <h1>Conclusions</h1>
 <p>With NIL being such a new topic, our group didn’t possess any pre-existing knowledge about the trends we might encounter. Consequently, formulating well-informed hypotheses proved challenging due to the limited availability of information on the subject.</p>
 <p>Looking at the results, it is evident that N.I.L. has exerted a more significant influence on player transfers and destination choices than the on-field impact for teams. In each of the scatterplot visuals, the most glaring observation is the discrepancy in NIL spending between various D1 football teams. Schools such as Texas, Colorado, and Alabama have invested significantly most into their NIL funds, as compared to the majority of other teams. Therefore, both scatterplots have these extreme outliers that impact the fit of a best-fit line. Therefore, we decided to include correlation values and the option to remove certain teams (specifically, these outliers) from the model. The removal of these outliers improves both the fit of the regression line, as well as the correlation value. The scatterplot of Followers vs NIL Valuation has an extremely strong positive correlation, with an r value of 0.77. The scatterplot of NIL Valuation vs Win/Loss Percentage shows a moderate, positive correlation, with an r value of only 0.42. Thus, confirming that the type of player that would transfer (one that has more followers) is more closely associated with an increased NIL valuation. The weaker correlation between NIL Valuation and Win/Loss Percentage conveys that increased NIL spending is not impacting on-field performance, yet. This trend is understandable as two years (timespan since NIL legislation) is generally not enough time to see significant growth or decline in the performance an entire team. Re-running this model in a few years might lead to a more significant trend.</p>
-<<<<<<< Updated upstream
-=======
-</section>
-<section id="customizing-your-blog-design" class="level1">
-<h1>Customizing your blog design</h1>
-<p>As a <em>final</em> detail <strong>only</strong> if you have time, you can explore options for customizing the style of your blog. By default, we are using the <code>cosmo</code> theme from Bootswatch themes (see Line 7 of this file if you want to switch out themes).</p>
-<section id="theme" class="level2">
-<h2>Theme</h2>
-<p>There are 25 Bootswatch themes included with Quarto. You can change the theme easily by specifying one of these themes on Line 7:</p>
-<ul>
-<li>default<br />
-</li>
-<li>cerulean<br />
-</li>
-<li>cosmo<br />
-</li>
-<li>cyborg<br />
-</li>
-<li>darkly<br />
-</li>
-<li>flatly<br />
-</li>
-<li>journal<br />
-</li>
-<li>litera<br />
-</li>
-<li>lumen<br />
-</li>
-<li>lux<br />
-</li>
-<li>materia<br />
-</li>
-<li>minty<br />
-</li>
-<li>morph<br />
-</li>
-<li>pulse<br />
-</li>
-<li>quartz<br />
-</li>
-<li>sandstone<br />
-</li>
-<li>simplex<br />
-</li>
-<li>sketchy<br />
-</li>
-<li>slate<br />
-</li>
-<li>solar<br />
-</li>
-<li>spacelab<br />
-</li>
-<li>superhero<br />
-</li>
-<li>united<br />
-</li>
-<li>vapor<br />
-</li>
-<li>yeti<br />
-</li>
-<li>zephyr</li>
-</ul>
-<p>There are, I’m sure, many more similar packages with built in themes, or you can look into how to include a CSS code chunk to customize aspects of a theme.</p>
-</section>
->>>>>>> Stashed changes
+<p>We are interested to see when we run our app in a few years, will schools like Colorado still be a top spender? Will new universities not previously mentioned realize their team’s potential if they invest in talent? Also, how much more significant will our predictors be in a few years for our logistic regression transfer predictor when we collect more data?</p>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
@@ -279,6 +211,10 @@ ul.task-list li input[type="checkbox"] {
 <p>“2023 College Football Transfer Portal Top Players”, <em>On3NIL</em>, available at <a href="https://www.on3.com/transfer-portal/industry/football/2023/" class="uri">https://www.on3.com/transfer-portal/industry/football/2023/</a>.</p>
 <!-- Data -->
 <p>(December 2023), “List of NCAA Division I FBS football programs”, <em>Wikipedia</em>, available at <a href="https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs" class="uri">https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs</a>.</p>
+</section>
+<section id="interactive-display" class="level1">
+<h1>Interactive Display</h1>
+<iframe src="https://tbarach26.shinyapps.io/MoneyMakers/" height="900px," width="1200px">
 </section>
 
 </main>
